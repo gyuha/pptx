@@ -1,0 +1,1 @@
+rejected role=QAAgent operation=revise reason=operation_not_allowed_for_role

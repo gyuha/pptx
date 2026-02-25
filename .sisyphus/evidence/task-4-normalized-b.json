@@ -1,0 +1,97 @@
+{
+  "schema_version": "normalize.v1",
+  "source_schema_version": "extract.v1",
+  "deck_id": "deck_b73bf3bddd59",
+  "input": {
+    "file": "fixtures/extract/born_digital_sample.pdf",
+    "page_count": 1
+  },
+  "status": "ok",
+  "metadata": {
+    "extract_status": "ok",
+    "extract_reason_code": null,
+    "extract_reason": null,
+    "engines": {
+      "primary": "pymupdf",
+      "fallback": "pdfplumber",
+      "fallback_used": false
+    },
+    "confidence_policy": "heuristic-v1"
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "elements": [
+        {
+          "element_id": "el_7ac0c8d103e0bd8b",
+          "kind": "text",
+          "text": "Quarterly Business Review",
+          "source_page": 1,
+          "source_block_id": "p001-b0001",
+          "source_bbox": [
+            72.0,
+            52.65,
+            288.05,
+            77.38
+          ],
+          "evidence": "extract.pages[0].blocks[0]#p001-b0001",
+          "confidence": 0.869,
+          "confidence_meta": {
+            "engine": "pymupdf",
+            "signals": [
+              "text_block"
+            ]
+          }
+        },
+        {
+          "element_id": "el_9b284eabd1919abf",
+          "kind": "text",
+          "text": "Revenue grew 17% year-over-year with stable gross margin.",
+          "source_page": 1,
+          "source_block_id": "p001-b0002",
+          "source_bbox": [
+            72.0,
+            97.1,
+            394.1,
+            113.59
+          ],
+          "evidence": "extract.pages[0].blocks[1]#p001-b0002",
+          "confidence": 0.884,
+          "confidence_meta": {
+            "engine": "pymupdf",
+            "signals": [
+              "text_block"
+            ]
+          }
+        },
+        {
+          "element_id": "el_ac8ee2a3d2882499",
+          "kind": "text",
+          "text": "Top initiatives: pricing refresh, retention campaign, and upsell bundles.",
+          "source_page": 1,
+          "source_block_id": "p001-b0003",
+          "source_bbox": [
+            72.0,
+            117.1,
+            446.83,
+            133.59
+          ],
+          "evidence": "extract.pages[0].blocks[2]#p001-b0003",
+          "confidence": 0.887,
+          "confidence_meta": {
+            "engine": "pymupdf",
+            "signals": [
+              "text_block"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "unsupported_report": {
+    "has_unsupported": false,
+    "counts_by_reason": {},
+    "items": []
+  },
+  "provenance_coverage": 1.0
+}

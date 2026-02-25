@@ -1,0 +1,2 @@
+Extraction complete: fixtures/extract/born_digital_sample.pdf -> .sisyphus/evidence/task-4-extract-pdf.json (1 pages, 3 blocks)
+Extraction complete: fixtures/extract/sample_mixed.docx -> .sisyphus/evidence/task-4-extract-docx.json (1 pages, 3 blocks)

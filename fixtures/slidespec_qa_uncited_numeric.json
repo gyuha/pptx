@@ -1,0 +1,26 @@
+{
+  "schema_version": "slidespec.v1",
+  "deck_id": "deck-qa-uncited-numeric",
+  "slides": [
+    {
+      "slide_id": "slide-001",
+      "title": "검증 필요 항목",
+      "elements": [
+        {
+          "kind": "title",
+          "text": "리스크 요약",
+          "source_page": 1,
+          "evidence": "extract.pages[0].blocks[0]#p001-b0001",
+          "confidence": 0.95
+        },
+        {
+          "kind": "body",
+          "text": "프로젝트 지연 위험은 40%입니다.",
+          "source_page": 2,
+          "evidence": "narrative-claim-without-citation",
+          "confidence": 0.9
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "slidespec.v1",
+  "deck_id": "deck-qa-citation-complete",
+  "slides": [
+    {
+      "slide_id": "slide-001",
+      "title": "근거 기반 요약",
+      "elements": [
+        {
+          "kind": "title",
+          "text": "성과 요약",
+          "source_page": 1,
+          "evidence": "extract.pages[0].blocks[0]#p001-b0001",
+          "confidence": 0.97
+        },
+        {
+          "kind": "body",
+          "text": "매출은 전년 대비 12% 증가했습니다.",
+          "source_page": 2,
+          "evidence": "extract.pages[1].blocks[2]#p002-b0003",
+          "confidence": 0.93
+        },
+        {
+          "kind": "body",
+          "text": "원가율은 3%p 개선되었습니다.",
+          "source_page": 3,
+          "evidence": "extract.pages[2].blocks[1]#p003-b0002",
+          "confidence": 0.91
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "input": {
+    "file": "fixtures/extract/sample_corrupt.docx",
+    "page_count": 0
+  },
+  "metadata": {
+    "confidence_policy": "heuristic-v1",
+    "fallback_engine": "none",
+    "fallback_used": false,
+    "primary_engine": "docx-xml"
+  },
+  "pages": [],
+  "reason": "DOCX package is invalid or corrupted.",
+  "reason_code": "invalid_docx_package",
+  "schema_version": "extract.v1",
+  "status": "unsupported"
+}

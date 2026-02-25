@@ -1,0 +1,22 @@
+Task 8 Evidence: Image API Credential Failure Path
+
+Command:
+OPENAI_API_KEY='' PPTX_AGENT_IMAGE_API_PROVIDER=openai uv run python -m pptx_agent.cli render --in fixtures/slidespec_image_render.json --out .sisyphus/tmp/task8/image-error.pptx ; printf "\n__EXIT_CODE__=%s\n" $?
+
+Output:
+Render failed: OPENAI_API_KEY is required when PPTX_AGENT_IMAGE_API_PROVIDER=openai
+Render hook error report written: .sisyphus/tmp/task8/image-error.pptx.hooks.error.json
+
+__EXIT_CODE__=1
+
+Command:
+python -c "import json, pathlib; b=json.loads(pathlib.Path('.sisyphus/tmp/task8/image-error.pptx.hooks.error.json').read_text()); print('image_error_reason=', b['reason']); print('image_error_phase=', b['phase']); print('image_error_type=', b['error_type'])"
+
+Output:
+image_error_reason= image_generation_failed
+image_error_phase= render
+image_error_type= ImageGenerationFailedError
+
+Observed key artifact fields:
+- .sisyphus/tmp/task8/image-error.pptx.hooks.error.json: schema=render.hooks.error.v1, reason=image_generation_failed, phase=render
+- details[0] includes OPENAI_API_KEY is required when PPTX_AGENT_IMAGE_API_PROVIDER=openai

@@ -1,0 +1,13 @@
+{
+  "details": [
+    "slides.0.elements.0.source_page: Field required"
+  ],
+  "error_type": "HookPolicyError",
+  "input_slidespec": ".sisyphus/evidence/task-7-invalid-slidespec.json",
+  "message": "pre_render:slidespec_validation_failed",
+  "output_pptx": ".sisyphus/evidence/task-7-error-output.pptx",
+  "phase": "pre_render",
+  "reason": "slidespec_validation_failed",
+  "run_id": "cd85a775db9e9654",
+  "schema": "render.hooks.error.v1"
+}

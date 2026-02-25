@@ -1,0 +1,52 @@
+{
+  "schema_version": "normalize.v1",
+  "source_schema_version": "extract.v1",
+  "deck_id": "deck_task6_valid",
+  "source_document_id": "doc_task6_valid",
+  "input": {
+    "file": "fixtures/extract/born_digital_sample.pdf",
+    "page_count": 1,
+    "source_document_id": "doc_task6_valid"
+  },
+  "status": "ok",
+  "metadata": {
+    "extract_status": "ok",
+    "extract_reason_code": null,
+    "extract_reason": null,
+    "engines": {
+      "primary": "pdfplumber",
+      "fallback": "ocrmypdf",
+      "fallback_used": false
+    },
+    "confidence_policy": "default"
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "elements": [
+        {
+          "element_id": "el_task6_001",
+          "kind": "text",
+          "text": "RFP requires 12-week phased delivery.",
+          "source_document_id": "doc_task6_valid",
+          "source_page": 1,
+          "source_block_id": "blk-task6-001",
+          "source_bbox": [12.0, 20.0, 420.0, 52.0],
+          "evidence": "extract.pages[0].blocks[0]#blk-task6-001",
+          "confidence": 0.96,
+          "confidence_meta": {
+            "engine": "pdfplumber",
+            "signals": ["font_size", "layout"]
+          },
+          "requirement_tags": ["timeline", "mandatory_requirement"]
+        }
+      ]
+    }
+  ],
+  "unsupported_report": {
+    "has_unsupported": false,
+    "counts_by_reason": {},
+    "items": []
+  },
+  "provenance_coverage": 1.0
+}

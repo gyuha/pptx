@@ -1,0 +1,4 @@
+Run failed: cloud profile credential/config check failed: OPENAI_API_KEY is required for model-profile=cloud
+__CLOUD_EXIT__=1
+Revise failed: unknown_target: slide_id='slide-999' not found
+__REVISE_EXIT__=1

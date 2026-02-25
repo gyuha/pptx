@@ -1,0 +1,44 @@
+{
+  "schema_version": "evidence_graph.v1",
+  "deck_id": "deck-001",
+  "language": "ko-KR",
+  "evidence_nodes": [
+    {
+      "evidence_id": "ev-001",
+      "text": "RFP는 12주 이내 단계별 납품을 요구합니다.",
+      "requirement_tags": [
+        "timeline"
+      ],
+      "provenance": {
+        "source_document_id": "doc-001",
+        "source_page": 2,
+        "source_block_id": "blk-11",
+        "source_span": {
+          "source_bbox": [
+            12.0,
+            34.0,
+            456.0,
+            78.0
+          ],
+          "char_start": 0,
+          "char_end": 27
+        },
+        "evidence": "extract.pages[1].blocks[1]#blk-11",
+        "confidence": 0.95
+      }
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim-001",
+      "text": "제안 일정은 12주 전달 계획을 기준으로 수립합니다."
+    }
+  ],
+  "links": [
+    {
+      "claim_id": "claim-001",
+      "evidence_id": "ev-999",
+      "rationale": "존재하지 않는 evidence를 참조합니다."
+    }
+  ]
+}

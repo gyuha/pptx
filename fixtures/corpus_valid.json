@@ -1,0 +1,37 @@
+{
+  "schema_version": "corpus.v1",
+  "batch_id": "batch-20260225-001",
+  "language": "ko-KR",
+  "documents": [
+    {
+      "doc_id": "doc-001",
+      "input_path": "fixtures/rfp_input/doc-001.pdf",
+      "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+      "language": "ko-KR",
+      "page_count": 2,
+      "chunks": [
+        {
+          "chunk_id": "chunk-001",
+          "text": "제안 범위는 분석, 설계, 구축, 운영 안정화 단계를 포함합니다.",
+          "source_document_id": "doc-001",
+          "source_path": "extract.pages[0].blocks[3]#blk-03",
+          "source_span": {
+            "page_number": 1,
+            "block_id": "blk-03",
+            "char_start": 0,
+            "char_end": 34
+          },
+          "requirement_tags": [
+            "scope",
+            "delivery"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "model_profile": "local",
+    "default_output_language": "ko-KR",
+    "image_generation_mode": "llm"
+  }
+}

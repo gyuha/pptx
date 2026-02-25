@@ -1,0 +1,26 @@
+{
+  "input": {
+    "file": "fixtures/extract/scanned_like_sample.pdf",
+    "page_count": 1
+  },
+  "metadata": {
+    "confidence_policy": "heuristic-v1",
+    "fallback_engine": "pdfplumber",
+    "fallback_used": false,
+    "primary_engine": "pymupdf"
+  },
+  "pages": [
+    {
+      "blocks": [],
+      "page_number": 1,
+      "size": {
+        "height": 842.0,
+        "width": 595.0
+      }
+    }
+  ],
+  "reason": "No extractable text found; document appears scanned or image-only. OCR is disabled.",
+  "reason_code": "scanned_or_image_only",
+  "schema_version": "extract.v1",
+  "status": "unsupported"
+}

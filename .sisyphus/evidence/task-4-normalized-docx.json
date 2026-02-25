@@ -1,0 +1,97 @@
+{
+  "schema_version": "normalize.v1",
+  "source_schema_version": "extract.v1",
+  "deck_id": "deck_a548922e53d8",
+  "input": {
+    "file": "fixtures/extract/sample_mixed.docx",
+    "page_count": 1
+  },
+  "status": "ok",
+  "metadata": {
+    "extract_status": "ok",
+    "extract_reason_code": null,
+    "extract_reason": null,
+    "engines": {
+      "primary": "docx-xml",
+      "fallback": "none",
+      "fallback_used": false
+    },
+    "confidence_policy": "heuristic-v1"
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "elements": [
+        {
+          "element_id": "el_94509d39a97365e8",
+          "kind": "text",
+          "text": "RFP Response Executive Summary",
+          "source_page": 1,
+          "source_block_id": "p001-b0001",
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "evidence": "extract.pages[0].blocks[0]#p001-b0001",
+          "confidence": 0.9,
+          "confidence_meta": {
+            "engine": "docx-xml",
+            "signals": [
+              "paragraph"
+            ]
+          }
+        },
+        {
+          "element_id": "el_97731c01be15b8a1",
+          "kind": "text",
+          "text": "We propose a phased delivery with measurable milestones.",
+          "source_page": 1,
+          "source_block_id": "p001-b0002",
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "evidence": "extract.pages[0].blocks[1]#p001-b0002",
+          "confidence": 0.9,
+          "confidence_meta": {
+            "engine": "docx-xml",
+            "signals": [
+              "paragraph"
+            ]
+          }
+        },
+        {
+          "element_id": "el_0e4b20fcd0cb28cc",
+          "kind": "table",
+          "text": "Phase\tTimeline\nDiscovery\t2 weeks",
+          "source_page": 1,
+          "source_block_id": "p001-t0003",
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "evidence": "extract.pages[0].blocks[2]#p001-t0003",
+          "confidence": 0.82,
+          "confidence_meta": {
+            "engine": "docx-xml",
+            "signals": [
+              "table"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "unsupported_report": {
+    "has_unsupported": false,
+    "counts_by_reason": {},
+    "items": []
+  },
+  "provenance_coverage": 1.0
+}

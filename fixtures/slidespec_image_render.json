@@ -1,0 +1,37 @@
+{
+  "schema_version": "slidespec.v1",
+  "deck_id": "deck-image-render",
+  "slides": [
+    {
+      "slide_id": "slide-image-001",
+      "title": "이미지 생성 슬라이드",
+      "layout_hint": "title_body_flow",
+      "elements": [
+        {
+          "kind": "title",
+          "text": "시각 자료 생성",
+          "source_page": 1,
+          "evidence": "fixtures/source/page-1.txt",
+          "confidence": 0.95
+        },
+        {
+          "kind": "body",
+          "text": "LLM 이미지 API 경로를 사용해 이미지를 삽입합니다.",
+          "source_page": 1,
+          "evidence": "fixtures/source/page-1.txt",
+          "confidence": 0.93
+        },
+        {
+          "kind": "image",
+          "text": "제안서 시각화",
+          "image_prompt": "기업 제안서용 추진 전략 인포그래픽",
+          "image_model": "image-model-v1",
+          "image_seed": null,
+          "source_page": 1,
+          "evidence": "fixtures/source/page-1.txt",
+          "confidence": 0.9
+        }
+      ]
+    }
+  ]
+}

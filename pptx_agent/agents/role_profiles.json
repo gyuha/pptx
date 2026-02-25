@@ -1,0 +1,231 @@
+{
+  "schema_version": "agent.roles.v2",
+  "policy": {
+    "authoritative_gates": [
+      "pre_render_contract_gate",
+      "post_render_qa_gate",
+      "write_on_error_report"
+    ],
+    "mcp_surface_restriction": "approved_tools_only",
+    "approved_mcp_tools": [
+      "extract",
+      "normalize",
+      "plan",
+      "render",
+      "qa-summary-read",
+      "run-folder",
+      "analysis-summary",
+      "revise"
+    ],
+    "global_forbidden_actions": [
+      "bypass_hook_gates",
+      "invoke_unapproved_mcp_tool",
+      "write_outside_pipeline_artifacts",
+      "direct_shell_execution",
+      "network_egress"
+    ]
+  },
+  "roles": [
+    {
+      "name": "BatchManagerAgent",
+      "stage_scope": [
+        "batch_manager",
+        "batch_manifest"
+      ],
+      "scope": "Run deterministic folder orchestration, track per-doc status, and hand off each doc run to corpus analysis.",
+      "allowed_tools": {
+        "cli_commands": [
+          "uv run python -m pptx_agent.cli run-folder"
+        ],
+        "mcp_tools": [
+          "run-folder",
+          "analysis-summary"
+        ],
+        "python_modules": [
+          "pptx_agent.cli"
+        ]
+      },
+      "forbidden_actions": [
+        "invoke_extract_normalize_plan_render_directly",
+        "invoke_revision_loop",
+        "edit_hook_policy",
+        "invoke_unapproved_mcp_tool"
+      ],
+      "allowed_artifact_globs": [
+        "artifacts/batches/<batch_id>/batch_manifest.json",
+        "artifacts/batches/<batch_id>/document_registry.json",
+        "artifacts/batches/<batch_id>/docs/<doc_id>/run_manifest.json"
+      ],
+      "handoff_to": "CorpusAgent"
+    },
+    {
+      "name": "CorpusAgent",
+      "stage_scope": [
+        "extract",
+        "normalize",
+        "corpus_analysis"
+      ],
+      "scope": "Extract source evidence, normalize provenance-bearing payloads, and emit deterministic corpus analysis summaries.",
+      "allowed_tools": {
+        "cli_commands": [
+          "uv run python -m pptx_agent.cli extract",
+          "uv run python -m pptx_agent.cli normalize"
+        ],
+        "mcp_tools": [
+          "extract",
+          "normalize",
+          "analysis-summary"
+        ],
+        "python_modules": [
+          "pptx_agent.extract",
+          "pptx_agent.normalize"
+        ]
+      },
+      "forbidden_actions": [
+        "plan_slide_layout",
+        "render_pptx",
+        "run_batch_manager",
+        "invoke_revision_loop",
+        "edit_hook_policy"
+      ],
+      "allowed_artifact_globs": [
+        "artifacts/batches/<batch_id>/docs/<doc_id>/extract.json",
+        "artifacts/batches/<batch_id>/docs/<doc_id>/normalized.json",
+        "artifacts/batches/<batch_id>/docs/<doc_id>/analysis.summary.json"
+      ],
+      "handoff_to": "OutlineAgent"
+    },
+    {
+      "name": "OutlineAgent",
+      "stage_scope": [
+        "evidence_graph",
+        "deck_outline",
+        "plan"
+      ],
+      "scope": "Transform normalized corpus evidence into deck outline and slidespec artifacts with explicit evidence grounding.",
+      "allowed_tools": {
+        "cli_commands": [
+          "uv run python -m pptx_agent.cli plan"
+        ],
+        "mcp_tools": [
+          "plan"
+        ],
+        "python_modules": [
+          "pptx_agent.plan"
+        ]
+      },
+      "forbidden_actions": [
+        "extract_or_normalize_documents",
+        "render_pptx",
+        "invoke_batch_manager",
+        "invoke_revision_loop",
+        "edit_hook_policy"
+      ],
+      "allowed_artifact_globs": [
+        "artifacts/batches/<batch_id>/docs/<doc_id>/deck_outline.json",
+        "artifacts/batches/<batch_id>/docs/<doc_id>/slidespec.json"
+      ],
+      "handoff_to": "BuildAgent"
+    },
+    {
+      "name": "BuildAgent",
+      "stage_scope": [
+        "pre_render_contract_gate",
+        "render",
+        "post_render_hook_emit"
+      ],
+      "scope": "Render slidespec to PPTX while honoring authoritative pre-render and post-render hook gates.",
+      "allowed_tools": {
+        "cli_commands": [
+          "uv run python -m pptx_agent.cli render"
+        ],
+        "mcp_tools": [
+          "render"
+        ],
+        "python_modules": [
+          "pptx_agent.render",
+          "pptx_agent.hooks"
+        ]
+      },
+      "forbidden_actions": [
+        "disable_pre_render_contract_gate",
+        "disable_post_render_qa_gate",
+        "mutate_slidespec_after_validation",
+        "invoke_broad_filesystem_operations",
+        "invoke_revision_loop"
+      ],
+      "allowed_artifact_globs": [
+        "artifacts/batches/<batch_id>/docs/<doc_id>/output.pptx",
+        "artifacts/batches/<batch_id>/docs/<doc_id>/output.pptx.qa.json",
+        "artifacts/batches/<batch_id>/docs/<doc_id>/output.pptx.hooks.qa.json",
+        "artifacts/batches/<batch_id>/docs/<doc_id>/output.pptx.hooks.error.json"
+      ],
+      "handoff_to": "QAAgent"
+    },
+    {
+      "name": "QAAgent",
+      "stage_scope": [
+        "post_render_qa_gate",
+        "report"
+      ],
+      "scope": "Read deterministic QA outputs, enforce gate outcomes, and publish review-safe summaries.",
+      "allowed_tools": {
+        "cli_commands": [
+          "uv run python -m pptx_agent.cli validate-ir"
+        ],
+        "mcp_tools": [
+          "qa-summary-read"
+        ],
+        "python_modules": [
+          "pptx_agent.hooks"
+        ]
+      },
+      "forbidden_actions": [
+        "modify_render_output",
+        "rerender_slides",
+        "edit_hook_policy",
+        "execute_shell_or_network_tools",
+        "invoke_revision_loop"
+      ],
+      "allowed_artifact_globs": [
+        "artifacts/batches/<batch_id>/docs/<doc_id>/qa.preflight.json",
+        "artifacts/batches/<batch_id>/docs/<doc_id>/qa.postrender.json",
+        "artifacts/batches/<batch_id>/docs/<doc_id>/output.pptx.hooks.qa.json",
+        "artifacts/batches/<batch_id>/docs/<doc_id>/output.pptx.hooks.error.json"
+      ],
+      "handoff_to": "RevisionAgent"
+    },
+    {
+      "name": "RevisionAgent",
+      "stage_scope": [
+        "revision_loop"
+      ],
+      "scope": "Apply targeted feedback patches through revise and trigger deterministic re-validation of impacted artifacts only.",
+      "allowed_tools": {
+        "cli_commands": [
+          "uv run python -m pptx_agent.cli revise"
+        ],
+        "mcp_tools": [
+          "revise"
+        ],
+        "python_modules": [
+          "pptx_agent.cli"
+        ]
+      },
+      "forbidden_actions": [
+        "run_batch_manager",
+        "extract_or_normalize_documents",
+        "plan_new_outline_without_feedback_patch",
+        "disable_pre_render_contract_gate",
+        "disable_post_render_qa_gate",
+        "invoke_unapproved_mcp_tool"
+      ],
+      "allowed_artifact_globs": [
+        "artifacts/batches/<batch_id>/docs/<doc_id>/feedback_patch.json",
+        "artifacts/batches/<batch_id>/docs/<doc_id>/run_manifest.json",
+        "artifacts/batches/<batch_id>/docs/<doc_id>/qa.postrender.json"
+      ],
+      "handoff_to": "QAAgent"
+    }
+  ]
+}

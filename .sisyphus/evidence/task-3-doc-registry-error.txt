@@ -1,0 +1,28 @@
+task: duplicate basename deterministic doc_id and no output overwrite
+command: uv run python -m pptx_agent.cli run-folder --in-dir /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_input --out-dir /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_output --artifacts-root /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_artifacts
+run_exit: 1
+registry_path: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_artifacts/5dfe03b5bd73bc07/document_registry.json
+manifest_path: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_artifacts/5dfe03b5bd73bc07/batch_manifest.json
+duplicate_name_count: 2
+unique_doc_ids: True
+unique_output_names: True
+duplicate_entries:
+  - relative_path=alpha/duplicate.pdf doc_id=5dc5f55ded317291 sha256=c29ca3af683b size=1242
+  - relative_path=beta/duplicate.pdf doc_id=0729215298b9ade9 sha256=4bb37a053ca4 size=944
+manifest_document_statuses:
+  - doc_id=5dc5f55ded317291 status=pass output_pptx=/Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_output/5dc5f55ded317291.pptx
+  - doc_id=0729215298b9ade9 status=fail output_pptx=None
+stdout:
+  Run complete: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_input/alpha/duplicate.pdf -> /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_artifacts/5dfe03b5bd73bc07/docs/5dc5f55ded317291/output.pptx (run_id=5dc5f55ded317291, artifacts=/Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_artifacts/5dfe03b5bd73bc07/docs/5dc5f55ded317291)
+  Run manifest written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_artifacts/5dfe03b5bd73bc07/docs/5dc5f55ded317291/run_manifest.json
+  Run complete: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_input/beta/duplicate.pdf -> /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_artifacts/5dfe03b5bd73bc07/docs/0729215298b9ade9/output.pptx (run_id=0729215298b9ade9, artifacts=/Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_artifacts/5dfe03b5bd73bc07/docs/0729215298b9ade9)
+  Run failed: hook policy violation [post_render] qa_gate_failed
+  - critical_overflow_zero
+  Run hook error report written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_artifacts/5dfe03b5bd73bc07/docs/0729215298b9ade9/output.pptx.hooks.error.json
+  Run manifest written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_artifacts/5dfe03b5bd73bc07/docs/0729215298b9ade9/run_manifest.json
+  Batch run complete: input_dir=/Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_input output_dir=/Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_output batch_id=5dfe03b5bd73bc07
+  Document registry written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_artifacts/5dfe03b5bd73bc07/document_registry.json
+  Batch manifest written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_dupe_artifacts/5dfe03b5bd73bc07/batch_manifest.json
+stderr:
+  <empty>
+assertion: PASSED duplicate-basename mapping check

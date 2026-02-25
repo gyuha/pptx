@@ -1,0 +1,9 @@
+Task 1 Bootstrap Failure-Path Evidence
+Date: 2026-02-24
+
+Scenario: simulated <3.11 preflight guard
+
+$ uv run python -c "import sys; simulated=(3,10,9); required=(3,11); raise SystemExit(f'ERROR: Python {simulated[0]}.{simulated[1]}.{simulated[2]} is below required {required[0]}.{required[1]}') if simulated < required else None"
+ERROR: Python 3.10.9 is below required 3.11
+
+Expected result: non-zero exit with clear version guard message

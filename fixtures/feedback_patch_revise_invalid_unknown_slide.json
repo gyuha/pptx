@@ -1,0 +1,18 @@
+{
+  "schema_version": "feedback_patch.v1",
+  "run_id": "doc-001",
+  "doc_id": "doc-001",
+  "summary": "존재하지 않는 슬라이드에 대한 잘못된 패치입니다.",
+  "patches": [
+    {
+      "slide_id": "slide-999",
+      "operation": "replace_title",
+      "path": "slides[99].title",
+      "value": "Invalid",
+      "rationale": "오류 시나리오 검증",
+      "evidence_ids": [
+        "ev-999"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,487 @@
+[
+  {
+    "initialize": {
+      "error": null,
+      "id": 1,
+      "jsonrpc": "2.0",
+      "result": {
+        "capabilities": {
+          "tools": {
+            "listChanged": false
+          }
+        },
+        "protocolVersion": "2024-11-05",
+        "serverInfo": {
+          "name": "pptx-agent-mcp",
+          "version": "0.1.0"
+        }
+      }
+    }
+  },
+  {
+    "tools_list": {
+      "error": null,
+      "id": 2,
+      "jsonrpc": "2.0",
+      "result": {
+        "tools": [
+          {
+            "description": "Extract structured text/table blocks from a PDF.",
+            "inputSchema": {
+              "properties": {
+                "input_pdf": {
+                  "title": "Input Pdf",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "input_pdf"
+              ],
+              "title": "ExtractArgs",
+              "type": "object"
+            },
+            "name": "extract"
+          },
+          {
+            "description": "Normalize extract.v1 payload into normalize.v1 payload.",
+            "inputSchema": {
+              "properties": {
+                "extract_payload": {
+                  "additionalProperties": true,
+                  "title": "Extract Payload",
+                  "type": "object"
+                }
+              },
+              "required": [
+                "extract_payload"
+              ],
+              "title": "NormalizeArgs",
+              "type": "object"
+            },
+            "name": "normalize"
+          },
+          {
+            "description": "Plan normalized payload into SlideSpec v1.",
+            "inputSchema": {
+              "properties": {
+                "normalized_payload": {
+                  "additionalProperties": true,
+                  "title": "Normalized Payload",
+                  "type": "object"
+                }
+              },
+              "required": [
+                "normalized_payload"
+              ],
+              "title": "PlanArgs",
+              "type": "object"
+            },
+            "name": "plan"
+          },
+          {
+            "description": "Render SlideSpec v1 into deterministic PPTX + QA report.",
+            "inputSchema": {
+              "properties": {
+                "output_pptx": {
+                  "title": "Output Pptx",
+                  "type": "string"
+                },
+                "slidespec": {
+                  "additionalProperties": true,
+                  "title": "Slidespec",
+                  "type": "object"
+                }
+              },
+              "required": [
+                "slidespec",
+                "output_pptx"
+              ],
+              "title": "RenderArgs",
+              "type": "object"
+            },
+            "name": "render"
+          },
+          {
+            "description": "Read and validate render hook QA summary JSON.",
+            "inputSchema": {
+              "properties": {
+                "qa_summary_path": {
+                  "title": "Qa Summary Path",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "qa_summary_path"
+              ],
+              "title": "QaReadArgs",
+              "type": "object"
+            },
+            "name": "qa-summary-read"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "extract": {
+      "error": null,
+      "id": 3,
+      "jsonrpc": "2.0",
+      "result": {
+        "content": [
+          {
+            "text": "{\"block_count\": 3, \"page_count\": 1, \"payload\": {\"input\": {\"file\": \"fixtures/extract/born_digital_sample.pdf\", \"page_count\": 1}, \"metadata\": {\"confidence_policy\": \"heuristic-v1\", \"fallback_engine\": \"pdfplumber\", \"fallback_used\": false, \"primary_engine\": \"pymupdf\"}, \"pages\": [{\"blocks\": [{\"bbox\": [72.0, 52.65, 288.05, 77.38], \"block_id\": \"p001-b0001\", \"confidence\": 0.869, \"confidence_meta\": {\"engine\": \"pymupdf\", \"signals\": [\"text_block\"]}, \"kind\": \"text\", \"text\": \"Quarterly Business Review\"}, {\"bbox\": [72.0, 97.1, 394.1, 113.59], \"block_id\": \"p001-b0002\", \"confidence\": 0.884, \"confidence_meta\": {\"engine\": \"pymupdf\", \"signals\": [\"text_block\"]}, \"kind\": \"text\", \"text\": \"Revenue grew 17% year-over-year with stable gross margin.\"}, {\"bbox\": [72.0, 117.1, 446.83, 133.59], \"block_id\": \"p001-b0003\", \"confidence\": 0.887, \"confidence_meta\": {\"engine\": \"pymupdf\", \"signals\": [\"text_block\"]}, \"kind\": \"text\", \"text\": \"Top initiatives: pricing refresh, retention campaign, and upsell bundles.\"}], \"page_number\": 1, \"size\": {\"height\": 842.0, \"width\": 595.0}}], \"reason\": null, \"reason_code\": null, \"schema_version\": \"extract.v1\", \"status\": \"ok\"}, \"reason\": null, \"reason_code\": null, \"schema_version\": \"extract.v1\", \"status\": \"ok\"}",
+            "type": "text"
+          }
+        ],
+        "isError": false,
+        "structuredContent": {
+          "ok": true,
+          "result": {
+            "block_count": 3,
+            "page_count": 1,
+            "payload": {
+              "input": {
+                "file": "fixtures/extract/born_digital_sample.pdf",
+                "page_count": 1
+              },
+              "metadata": {
+                "confidence_policy": "heuristic-v1",
+                "fallback_engine": "pdfplumber",
+                "fallback_used": false,
+                "primary_engine": "pymupdf"
+              },
+              "pages": [
+                {
+                  "blocks": [
+                    {
+                      "bbox": [
+                        72.0,
+                        52.65,
+                        288.05,
+                        77.38
+                      ],
+                      "block_id": "p001-b0001",
+                      "confidence": 0.869,
+                      "confidence_meta": {
+                        "engine": "pymupdf",
+                        "signals": [
+                          "text_block"
+                        ]
+                      },
+                      "kind": "text",
+                      "text": "Quarterly Business Review"
+                    },
+                    {
+                      "bbox": [
+                        72.0,
+                        97.1,
+                        394.1,
+                        113.59
+                      ],
+                      "block_id": "p001-b0002",
+                      "confidence": 0.884,
+                      "confidence_meta": {
+                        "engine": "pymupdf",
+                        "signals": [
+                          "text_block"
+                        ]
+                      },
+                      "kind": "text",
+                      "text": "Revenue grew 17% year-over-year with stable gross margin."
+                    },
+                    {
+                      "bbox": [
+                        72.0,
+                        117.1,
+                        446.83,
+                        133.59
+                      ],
+                      "block_id": "p001-b0003",
+                      "confidence": 0.887,
+                      "confidence_meta": {
+                        "engine": "pymupdf",
+                        "signals": [
+                          "text_block"
+                        ]
+                      },
+                      "kind": "text",
+                      "text": "Top initiatives: pricing refresh, retention campaign, and upsell bundles."
+                    }
+                  ],
+                  "page_number": 1,
+                  "size": {
+                    "height": 842.0,
+                    "width": 595.0
+                  }
+                }
+              ],
+              "reason": null,
+              "reason_code": null,
+              "schema_version": "extract.v1",
+              "status": "ok"
+            },
+            "reason": null,
+            "reason_code": null,
+            "schema_version": "extract.v1",
+            "status": "ok"
+          },
+          "tool": "extract"
+        }
+      }
+    }
+  },
+  {
+    "normalize": {
+      "error": null,
+      "id": 4,
+      "jsonrpc": "2.0",
+      "result": {
+        "content": [
+          {
+            "text": "{\"deck_id\": \"deck_b73bf3bddd59\", \"element_count\": 3, \"has_unsupported\": false, \"page_count\": 1, \"payload\": {\"deck_id\": \"deck_b73bf3bddd59\", \"input\": {\"file\": \"fixtures/extract/born_digital_sample.pdf\", \"page_count\": 1}, \"metadata\": {\"confidence_policy\": \"heuristic-v1\", \"engines\": {\"fallback\": \"pdfplumber\", \"fallback_used\": false, \"primary\": \"pymupdf\"}, \"extract_reason\": null, \"extract_reason_code\": null, \"extract_status\": \"ok\"}, \"pages\": [{\"elements\": [{\"confidence\": 0.869, \"confidence_meta\": {\"engine\": \"pymupdf\", \"signals\": [\"text_block\"]}, \"element_id\": \"el_7ac0c8d103e0bd8b\", \"evidence\": \"extract.pages[0].blocks[0]#p001-b0001\", \"kind\": \"text\", \"source_bbox\": [72.0, 52.65, 288.05, 77.38], \"source_block_id\": \"p001-b0001\", \"source_page\": 1, \"text\": \"Quarterly Business Review\"}, {\"confidence\": 0.884, \"confidence_meta\": {\"engine\": \"pymupdf\", \"signals\": [\"text_block\"]}, \"element_id\": \"el_9b284eabd1919abf\", \"evidence\": \"extract.pages[0].blocks[1]#p001-b0002\", \"kind\": \"text\", \"source_bbox\": [72.0, 97.1, 394.1, 113.59], \"source_block_id\": \"p001-b0002\", \"source_page\": 1, \"text\": \"Revenue grew 17% year-over-year with stable gross margin.\"}, {\"confidence\": 0.887, \"confidence_meta\": {\"engine\": \"pymupdf\", \"signals\": [\"text_block\"]}, \"element_id\": \"el_ac8ee2a3d2882499\", \"evidence\": \"extract.pages[0].blocks[2]#p001-b0003\", \"kind\": \"text\", \"source_bbox\": [72.0, 117.1, 446.83, 133.59], \"source_block_id\": \"p001-b0003\", \"source_page\": 1, \"text\": \"Top initiatives: pricing refresh, retention campaign, and upsell bundles.\"}], \"page_number\": 1}], \"provenance_coverage\": 1.0, \"schema_version\": \"normalize.v1\", \"source_schema_version\": \"extract.v1\", \"status\": \"ok\", \"unsupported_report\": {\"counts_by_reason\": {}, \"has_unsupported\": false, \"items\": []}}, \"schema_version\": \"normalize.v1\", \"status\": \"ok\"}",
+            "type": "text"
+          }
+        ],
+        "isError": false,
+        "structuredContent": {
+          "ok": true,
+          "result": {
+            "deck_id": "deck_b73bf3bddd59",
+            "element_count": 3,
+            "has_unsupported": false,
+            "page_count": 1,
+            "payload": {
+              "deck_id": "deck_b73bf3bddd59",
+              "input": {
+                "file": "fixtures/extract/born_digital_sample.pdf",
+                "page_count": 1
+              },
+              "metadata": {
+                "confidence_policy": "heuristic-v1",
+                "engines": {
+                  "fallback": "pdfplumber",
+                  "fallback_used": false,
+                  "primary": "pymupdf"
+                },
+                "extract_reason": null,
+                "extract_reason_code": null,
+                "extract_status": "ok"
+              },
+              "pages": [
+                {
+                  "elements": [
+                    {
+                      "confidence": 0.869,
+                      "confidence_meta": {
+                        "engine": "pymupdf",
+                        "signals": [
+                          "text_block"
+                        ]
+                      },
+                      "element_id": "el_7ac0c8d103e0bd8b",
+                      "evidence": "extract.pages[0].blocks[0]#p001-b0001",
+                      "kind": "text",
+                      "source_bbox": [
+                        72.0,
+                        52.65,
+                        288.05,
+                        77.38
+                      ],
+                      "source_block_id": "p001-b0001",
+                      "source_page": 1,
+                      "text": "Quarterly Business Review"
+                    },
+                    {
+                      "confidence": 0.884,
+                      "confidence_meta": {
+                        "engine": "pymupdf",
+                        "signals": [
+                          "text_block"
+                        ]
+                      },
+                      "element_id": "el_9b284eabd1919abf",
+                      "evidence": "extract.pages[0].blocks[1]#p001-b0002",
+                      "kind": "text",
+                      "source_bbox": [
+                        72.0,
+                        97.1,
+                        394.1,
+                        113.59
+                      ],
+                      "source_block_id": "p001-b0002",
+                      "source_page": 1,
+                      "text": "Revenue grew 17% year-over-year with stable gross margin."
+                    },
+                    {
+                      "confidence": 0.887,
+                      "confidence_meta": {
+                        "engine": "pymupdf",
+                        "signals": [
+                          "text_block"
+                        ]
+                      },
+                      "element_id": "el_ac8ee2a3d2882499",
+                      "evidence": "extract.pages[0].blocks[2]#p001-b0003",
+                      "kind": "text",
+                      "source_bbox": [
+                        72.0,
+                        117.1,
+                        446.83,
+                        133.59
+                      ],
+                      "source_block_id": "p001-b0003",
+                      "source_page": 1,
+                      "text": "Top initiatives: pricing refresh, retention campaign, and upsell bundles."
+                    }
+                  ],
+                  "page_number": 1
+                }
+              ],
+              "provenance_coverage": 1.0,
+              "schema_version": "normalize.v1",
+              "source_schema_version": "extract.v1",
+              "status": "ok",
+              "unsupported_report": {
+                "counts_by_reason": {},
+                "has_unsupported": false,
+                "items": []
+              }
+            },
+            "schema_version": "normalize.v1",
+            "status": "ok"
+          },
+          "tool": "normalize"
+        }
+      }
+    }
+  },
+  {
+    "plan": {
+      "error": null,
+      "id": 5,
+      "jsonrpc": "2.0",
+      "result": {
+        "content": [
+          {
+            "text": "{\"deck_id\": \"deck_b73bf3bddd59\", \"element_count\": 3, \"payload\": {\"deck_id\": \"deck_b73bf3bddd59\", \"schema_version\": \"slidespec.v1\", \"slides\": [{\"elements\": [{\"confidence\": 0.869, \"evidence\": \"extract.pages[0].blocks[0]#p001-b0001\", \"kind\": \"title\", \"source_page\": 1, \"text\": \"Quarterly Business Review\"}, {\"confidence\": 0.884, \"evidence\": \"extract.pages[0].blocks[1]#p001-b0002\", \"kind\": \"body\", \"source_page\": 1, \"text\": \"Revenue grew 17% year-over-year with stable gross margin.\"}, {\"confidence\": 0.887, \"evidence\": \"extract.pages[0].blocks[2]#p001-b0003\", \"kind\": \"body\", \"source_page\": 1, \"text\": \"Top initiatives: pricing refresh, retention campaign, and upsell bundles.\"}], \"layout_hint\": null, \"slide_id\": \"slide_p001\", \"title\": \"Quarterly Business Review\"}]}, \"schema_version\": \"slidespec.v1\", \"slide_count\": 1}",
+            "type": "text"
+          }
+        ],
+        "isError": false,
+        "structuredContent": {
+          "ok": true,
+          "result": {
+            "deck_id": "deck_b73bf3bddd59",
+            "element_count": 3,
+            "payload": {
+              "deck_id": "deck_b73bf3bddd59",
+              "schema_version": "slidespec.v1",
+              "slides": [
+                {
+                  "elements": [
+                    {
+                      "confidence": 0.869,
+                      "evidence": "extract.pages[0].blocks[0]#p001-b0001",
+                      "kind": "title",
+                      "source_page": 1,
+                      "text": "Quarterly Business Review"
+                    },
+                    {
+                      "confidence": 0.884,
+                      "evidence": "extract.pages[0].blocks[1]#p001-b0002",
+                      "kind": "body",
+                      "source_page": 1,
+                      "text": "Revenue grew 17% year-over-year with stable gross margin."
+                    },
+                    {
+                      "confidence": 0.887,
+                      "evidence": "extract.pages[0].blocks[2]#p001-b0003",
+                      "kind": "body",
+                      "source_page": 1,
+                      "text": "Top initiatives: pricing refresh, retention campaign, and upsell bundles."
+                    }
+                  ],
+                  "layout_hint": null,
+                  "slide_id": "slide_p001",
+                  "title": "Quarterly Business Review"
+                }
+              ]
+            },
+            "schema_version": "slidespec.v1",
+            "slide_count": 1
+          },
+          "tool": "plan"
+        }
+      }
+    }
+  },
+  {
+    "render": {
+      "error": null,
+      "id": 6,
+      "jsonrpc": "2.0",
+      "result": {
+        "content": [
+          {
+            "text": "{\"output_pptx\": \".sisyphus/evidence/task-8-output.pptx\", \"qa_report\": {\"critical_overflow_count\": 0, \"deck_id\": \"deck_b73bf3bddd59\", \"output_pptx\": \".sisyphus/evidence/task-8-output.pptx\", \"overflow_metric_note\": \"deterministic_heuristic_char_thresholds:title=140,body=420,table_cell=120\", \"qa_schema\": \"render.qa.v1\", \"schema_version\": \"slidespec.v1\", \"slide_count_expected\": 1, \"slide_count_rendered\": 1}}",
+            "type": "text"
+          }
+        ],
+        "isError": false,
+        "structuredContent": {
+          "ok": true,
+          "result": {
+            "output_pptx": ".sisyphus/evidence/task-8-output.pptx",
+            "qa_report": {
+              "critical_overflow_count": 0,
+              "deck_id": "deck_b73bf3bddd59",
+              "output_pptx": ".sisyphus/evidence/task-8-output.pptx",
+              "overflow_metric_note": "deterministic_heuristic_char_thresholds:title=140,body=420,table_cell=120",
+              "qa_schema": "render.qa.v1",
+              "schema_version": "slidespec.v1",
+              "slide_count_expected": 1,
+              "slide_count_rendered": 1
+            }
+          },
+          "tool": "render"
+        }
+      }
+    }
+  },
+  {
+    "qa_summary_read": {
+      "error": null,
+      "id": 7,
+      "jsonrpc": "2.0",
+      "result": {
+        "content": [
+          {
+            "text": "{\"qa_summary\": {\"checks\": {\"critical_overflow_zero\": true, \"slide_count_matches\": true}, \"failures\": [], \"input_slidespec\": \".sisyphus/evidence/task-6-regression-plan.json\", \"output_pptx\": \".sisyphus/evidence/task-7-output.pptx\", \"qa_report\": \".sisyphus/evidence/task-7-output.pptx.qa.json\", \"run_id\": \"44979aa34e0f9a7a\", \"schema\": \"render.hooks.qa.v1\", \"status\": \"pass\"}}",
+            "type": "text"
+          }
+        ],
+        "isError": false,
+        "structuredContent": {
+          "ok": true,
+          "result": {
+            "qa_summary": {
+              "checks": {
+                "critical_overflow_zero": true,
+                "slide_count_matches": true
+              },
+              "failures": [],
+              "input_slidespec": ".sisyphus/evidence/task-6-regression-plan.json",
+              "output_pptx": ".sisyphus/evidence/task-7-output.pptx",
+              "qa_report": ".sisyphus/evidence/task-7-output.pptx.qa.json",
+              "run_id": "44979aa34e0f9a7a",
+              "schema": "render.hooks.qa.v1",
+              "status": "pass"
+            }
+          },
+          "tool": "qa-summary-read"
+        }
+      }
+    }
+  }
+]

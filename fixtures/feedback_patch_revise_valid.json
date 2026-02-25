@@ -1,0 +1,18 @@
+{
+  "schema_version": "feedback_patch.v1",
+  "run_id": "doc-001",
+  "doc_id": "doc-001",
+  "summary": "첫 번째 슬라이드 본문 목표 문구를 수정합니다.",
+  "patches": [
+    {
+      "slide_id": "slide_001",
+      "operation": "replace_body",
+      "path": "slides[0].elements[1].text",
+      "value": "Revenue increased by 16% year over year.",
+      "rationale": "최신 검토 피드백 수치를 반영합니다.",
+      "evidence_ids": [
+        "ev-001"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+Run complete: fixtures/rfp_input/doc-a.pdf -> .sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/docs/a3fd8c01dd9de969/output.pptx (run_id=a3fd8c01dd9de969, artifacts=.sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/docs/a3fd8c01dd9de969)
+Run manifest written: .sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/docs/a3fd8c01dd9de969/run_manifest.json
+Run complete: fixtures/rfp_input/doc-b.pdf -> .sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/docs/a5049e6ab20e9d50/output.pptx (run_id=a5049e6ab20e9d50, artifacts=.sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/docs/a5049e6ab20e9d50)
+Run manifest written: .sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/docs/a5049e6ab20e9d50/run_manifest.json
+Run complete: fixtures/rfp_input/doc-c.docx -> .sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/docs/cf15259cda0f8079/output.pptx (run_id=cf15259cda0f8079, artifacts=.sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/docs/cf15259cda0f8079)
+Run manifest written: .sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/docs/cf15259cda0f8079/run_manifest.json
+Batch run complete: input_dir=fixtures/rfp_input output_dir=.sisyphus/tmp/task14/happy/out batch_id=4fb947a910d7b667
+Document registry written: .sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/document_registry.json
+Batch manifest written: .sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/batch_manifest.json
+Revise complete: run_dir=.sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/docs/a3fd8c01dd9de969 targeted_slide_ids=['slide_001'] run_id=4f5468b643e8d88b
+Run manifest written: .sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/docs/a3fd8c01dd9de969/run_manifest.json
+HAPPY_DOC_ID=a3fd8c01dd9de969
+HAPPY_RUN_DIR=.sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/docs/a3fd8c01dd9de969
+HAPPY_OUTPUT_COUNT=3
+HAPPY_BATCH_MANIFEST=.sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/batch_manifest.json
+HAPPY_REGISTRY=.sisyphus/tmp/task14/happy/artifacts/4fb947a910d7b667/document_registry.json
+HAPPY_STATUS=PASS

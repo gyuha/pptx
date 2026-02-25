@@ -1,0 +1,1 @@
+SlideSpec v1 valid: fixtures/slidespec_valid.json (schema_version=slidespec.v1)

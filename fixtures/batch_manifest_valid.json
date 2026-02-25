@@ -1,0 +1,49 @@
+{
+  "schema_version": "batch_manifest.v1",
+  "batch_id": "batch-20260225-001",
+  "status": "pass",
+  "input_dir": "fixtures/rfp_input",
+  "output_dir": "output",
+  "artifacts_root": "artifacts/batches",
+  "runtime": {
+    "model_profile": "local",
+    "text_model": "text-model-v1",
+    "image_model": "image-model-v1",
+    "language": "ko-KR"
+  },
+  "counts": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "unsupported": 0
+  },
+  "documents": [
+    {
+      "doc_id": "doc-001",
+      "input_file": "fixtures/rfp_input/doc-001.pdf",
+      "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+      "status": "pass",
+      "run_dir": "artifacts/batches/batch-20260225-001/docs/doc-001",
+      "output_pptx": "output/doc-001.pptx",
+      "run_manifest_path": "artifacts/batches/batch-20260225-001/docs/doc-001/run_manifest.json",
+      "qa_preflight_path": "artifacts/batches/batch-20260225-001/docs/doc-001/qa.preflight.json",
+      "qa_postrender_path": "artifacts/batches/batch-20260225-001/docs/doc-001/qa.postrender.json",
+      "image_generation": {
+        "requested": 2,
+        "succeeded": 2,
+        "failed": 0,
+        "image_model": "image-model-v1"
+      },
+      "image_traces": [
+        {
+          "slide_id": "slide_003",
+          "element_index": 2,
+          "image_prompt": "기업 제안서용 추진 전략 인포그래픽",
+          "image_model": "image-model-v1",
+          "image_seed": null,
+          "image_path": "artifacts/batches/batch-20260225-001/docs/doc-001/output.pptx.images/slide_003_image_02_deadbeefcafe.png"
+        }
+      ]
+    }
+  ]
+}

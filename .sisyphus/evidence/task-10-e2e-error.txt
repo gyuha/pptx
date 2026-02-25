@@ -1,0 +1,24 @@
+Validation failed for fixtures/slidespec_missing_source_page.json:
+- slides.0.elements.0.source_page: Field required
+Extraction complete: fixtures/extract/born_digital_sample.pdf -> artifacts/task10-injection-fail/extract.json (1 pages, 3 blocks)
+Normalization complete: artifacts/task10-injection-fail/extract.json -> artifacts/task10-injection-fail/normalized.json (1 pages, 3 elements, unsupported=False)
+Planning complete: artifacts/task10-injection-fail/normalized.json -> artifacts/task10-injection-fail/slidespec.json (1 slides, 3 elements, schema=slidespec.v1)
+{"checks": {"provenance_coverage_complete": true, "slidespec_valid": true, "unsafe_text_absent": false}, "failures": ["unsafe_text_absent", "slides[0].title: marker='ignore previous instructions'"], "hook_summary_path": null, "metrics": {"critical_overflow_count": 0, "provenance_coverage_ratio": 1.0, "provenance_covered_elements": 3, "provenance_total_elements": 3, "rendered_slide_count_match": 1, "unsafe_text_match_count": 1}, "qa_report_path": null, "run_id": "task10-injection-fail", "schema": "pipeline.qa.gate.v1", "slidespec_path": "artifacts/task10-injection-fail/slidespec.json", "status": "fail"}
+QA gate report written: artifacts/task10-injection-fail/qa.preflight.json
+extract.json
+normalized.json
+qa.preflight.json
+slidespec.json
+{'malformed_exit': 1, 'injection_exit': 1, 'output_present': 0}
+
+run-local post-render QA failure regression check:
+- command: uv run python -m pptx_agent.cli run-local --in fixtures/extract/overflow_trigger_sample.pdf --artifacts-root artifacts --run-id task10-postrender-fail
+- exit_code: 1
+- qa.postrender.json exists: True (artifacts/task10-postrender-fail/qa.postrender.json, status=fail)
+- run_manifest.json exists: True (artifacts/task10-postrender-fail/run_manifest.json, status=failed_postrender, failures=[critical_overflow_zero, hook_summary_pass])
+
+run-local post-render QA failure regression check:
+- command: uv run python -m pptx_agent.cli run-local --in fixtures/extract/overflow_trigger_sample.pdf --artifacts-root artifacts --run-id task10-postrender-fail
+- exit_code: 1
+- qa.postrender.json exists: True (artifacts/task10-postrender-fail/qa.postrender.json, status=fail)
+- run_manifest.json exists: True (artifacts/task10-postrender-fail/run_manifest.json, status=failed_postrender, failures=[critical_overflow_zero, hook_summary_pass])

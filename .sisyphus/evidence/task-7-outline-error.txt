@@ -1,0 +1,20 @@
+Task 7 Proposal Deck Outline Failure Evidence
+
+Date: 2026-02-25
+
+Commands:
+1) uv run python -m pptx_agent.cli validate-outline --in fixtures/deck_outline_invalid_missing_section.json
+2) uv run python -m pptx_agent.cli validate-outline --in fixtures/deck_outline_invalid_uncited_numeric.json
+
+Command output:
+- Validation failed for fixtures/deck_outline_invalid_missing_section.json:
+- sections: Value error, sections missing required names: Risks
+- Validation failed for fixtures/deck_outline_invalid_uncited_numeric.json:
+- sections.0: Value error, summary must not include numeric facts; move numeric claims to slide-level evidence-backed fields
+
+Expected result observed:
+- Missing mandatory proposal section fails validation with explicit section name.
+- Uncited numeric fact in outline summary fails validation in fail-closed mode.
+
+Regression fix note:
+- Failure-path validation behavior remains unchanged after layout-hint compatibility fix.

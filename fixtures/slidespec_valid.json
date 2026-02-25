@@ -1,0 +1,26 @@
+{
+  "schema_version": "slidespec.v1",
+  "deck_id": "deck-001",
+  "slides": [
+    {
+      "slide_id": "slide-001",
+      "title": "Overview",
+      "elements": [
+        {
+          "kind": "title",
+          "text": "Quarterly Report",
+          "source_page": 1,
+          "evidence": "fixtures/source/page-1.txt",
+          "confidence": 0.98
+        },
+        {
+          "kind": "body",
+          "text": "Revenue increased by 12% year over year.",
+          "source_page": 2,
+          "evidence": "fixtures/source/page-2.txt",
+          "confidence": 0.92
+        }
+      ]
+    }
+  ]
+}

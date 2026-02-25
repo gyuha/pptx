@@ -1,0 +1,18 @@
+{
+  "schema_version": "slidespec.v1",
+  "deck_id": "deck-002",
+  "slides": [
+    {
+      "slide_id": "slide-001",
+      "title": "Overview",
+      "elements": [
+        {
+          "kind": "body",
+          "text": "This element is missing source_page provenance.",
+          "evidence": "fixtures/source/page-3.txt",
+          "confidence": 0.77
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+Task 6 Evidence Graph Orphan Claim Failure Evidence
+
+Date: 2026-02-25
+
+Command:
+1) uv run python -m pptx_agent.cli plan --in fixtures/normalized_evidence_graph_orphan_claim.json --out .sisyphus/tmp/task6/plan_orphan_should_fail.json
+
+Command output:
+- Planning failed for fixtures/normalized_evidence_graph_orphan_claim.json:
+- Unsupported planning input: orphan evidence reference for claim 'claim_task6_orphan': ev_missing_deadbeef.
+
+Expected result observed:
+- Planner path fails closed when claim_reference_map includes evidence IDs that are not present in the normalized evidence set.

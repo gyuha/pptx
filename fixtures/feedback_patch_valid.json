@@ -1,0 +1,18 @@
+{
+  "schema_version": "feedback_patch.v1",
+  "run_id": "b611d124a215514e",
+  "doc_id": "doc-001",
+  "summary": "첫 번째 슬라이드 제목을 고객 표현에 맞게 조정합니다.",
+  "patches": [
+    {
+      "slide_id": "slide-001",
+      "operation": "replace_title",
+      "path": "slides[0].title",
+      "value": "사업 제안 개요",
+      "rationale": "고객 용어와 제안 문서 표현을 일치시킵니다.",
+      "evidence_ids": [
+        "ev-001"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+SlideSpec v1 valid: fixtures/slidespec_valid.json (schema_version=slidespec.v1)
+ok corpus: fixtures/corpus_valid.json schema_version=corpus.v1
+ok evidence_graph: fixtures/evidence_graph_valid.json schema_version=evidence_graph.v1
+ok deck_outline: fixtures/deck_outline_valid.json schema_version=deck_outline.v1
+ok feedback_patch: fixtures/feedback_patch_valid.json schema_version=feedback_patch.v1
+ok batch_manifest: fixtures/batch_manifest_valid.json schema_version=batch_manifest.v1

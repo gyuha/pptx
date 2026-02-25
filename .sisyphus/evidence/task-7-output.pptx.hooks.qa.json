@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "critical_overflow_zero": true,
+    "slide_count_matches": true
+  },
+  "failures": [],
+  "input_slidespec": ".sisyphus/evidence/task-6-regression-plan.json",
+  "output_pptx": ".sisyphus/evidence/task-7-output.pptx",
+  "qa_report": ".sisyphus/evidence/task-7-output.pptx.qa.json",
+  "run_id": "44979aa34e0f9a7a",
+  "schema": "render.hooks.qa.v1",
+  "status": "pass"
+}

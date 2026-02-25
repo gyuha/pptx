@@ -1,0 +1,46 @@
+{
+  "schema_version": "normalize.v1",
+  "source_schema_version": "extract.v1",
+  "deck_id": "deck_77448d360a2b",
+  "input": {
+    "file": "fixtures/extract/scanned_like_sample.pdf",
+    "page_count": 1
+  },
+  "status": "unsupported",
+  "metadata": {
+    "extract_status": "unsupported",
+    "extract_reason_code": "scanned_or_image_only",
+    "extract_reason": "No extractable text found; document appears scanned or image-only. OCR is disabled.",
+    "engines": {
+      "primary": "pymupdf",
+      "fallback": "pdfplumber",
+      "fallback_used": false
+    },
+    "confidence_policy": "heuristic-v1"
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "elements": []
+    }
+  ],
+  "unsupported_report": {
+    "has_unsupported": true,
+    "counts_by_reason": {
+      "scanned_or_image_only": 1
+    },
+    "items": [
+      {
+        "scope": "document",
+        "source_page": null,
+        "source_block_id": null,
+        "class_name": "unsupported_document",
+        "reason_code": "scanned_or_image_only",
+        "details": {
+          "reason": "No extractable text found; document appears scanned or image-only. OCR is disabled."
+        }
+      }
+    ]
+  },
+  "provenance_coverage": 1.0
+}

@@ -1,0 +1,21 @@
+Scenario: happy revise
+Revise complete: run_dir=artifacts/batches/task10/docs/doc-001 targeted_slide_ids=['slide_001'] run_id=af2559a734a83f0c
+Run manifest written: artifacts/batches/task10/docs/doc-001/run_manifest.json
+
+--- verification ---
+changed_slide_ids=['slide_001']
+targeted_slide_ids=['slide_001']
+bad_tmp_image_paths=[]
+canonical_image_paths_count=2
+parent_run_id=doc-001
+feedback_reference_sha256=196dc9d09674aa2e7ee8e442b560e8af674ad77468c3870e2380cbf178b16b50
+output_hash_after_happy=804a7d52ae7eb7ca8ecd174942809733723c7d5f60d88051164d78aa356ada0c
+
+Scenario: invalid target revise
+Revise failed: unknown_target: slide_id='slide-999' not found
+
+--- verification ---
+invalid_exit_code=1
+unknown_target_reported=True
+output_hash_after_invalid=804a7d52ae7eb7ca8ecd174942809733723c7d5f60d88051164d78aa356ada0c
+output_overwritten_on_invalid=False

@@ -1,0 +1,10 @@
+scenario=happy_path_hook_chain
+command=uv run python -m pptx_agent.cli render --in /Users/gyuha/workspace/pptx/.sisyphus/evidence/task-6-regression-plan.json --out /Users/gyuha/workspace/pptx/.sisyphus/evidence/task-7-output.pptx
+exit_code=0
+stdout<<EOF
+{"critical_overflow_count": 0, "deck_id": "deck_b73bf3bddd59", "output_pptx": "/Users/gyuha/workspace/pptx/.sisyphus/evidence/task-7-output.pptx", "overflow_metric_note": "deterministic_heuristic_char_thresholds:title=140,body=420,table_cell=120", "qa_schema": "render.qa.v1", "schema_version": "slidespec.v1", "slide_count_expected": 1, "slide_count_rendered": 1}
+Render QA report written: /Users/gyuha/workspace/pptx/.sisyphus/evidence/task-7-output.pptx.qa.json
+EOF
+stderr<<EOF
+
+EOF

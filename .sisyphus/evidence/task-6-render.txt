@@ -1,0 +1,8 @@
+{"critical_overflow_count": 0, "deck_id": "deck_b73bf3bddd59", "output_pptx": ".sisyphus/evidence/task-6-output-a.pptx", "overflow_metric_note": "deterministic_heuristic_char_thresholds:title=140,body=420,table_cell=120", "qa_schema": "render.qa.v1", "schema_version": "slidespec.v1", "slide_count_expected": 1, "slide_count_rendered": 1}
+Render QA report written: .sisyphus/evidence/task-6-output-a.pptx.qa.json
+{"critical_overflow_count": 0, "deck_id": "deck_b73bf3bddd59", "output_pptx": ".sisyphus/evidence/task-6-output-b.pptx", "overflow_metric_note": "deterministic_heuristic_char_thresholds:title=140,body=420,table_cell=120", "qa_schema": "render.qa.v1", "schema_version": "slidespec.v1", "slide_count_expected": 1, "slide_count_rendered": 1}
+Render QA report written: .sisyphus/evidence/task-6-output-b.pptx.qa.json
+qa_deterministic_equal True
+slide_count_expected 1
+slide_count_rendered 1
+critical_overflow_count 0

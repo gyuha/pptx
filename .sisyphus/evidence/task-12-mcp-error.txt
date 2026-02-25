@@ -1,0 +1,40 @@
+{
+  "forbidden_tool_call": {
+    "error": {
+      "code": -32601,
+      "data": {
+        "allowed_tools": [
+          "analysis-summary",
+          "extract",
+          "normalize",
+          "plan",
+          "qa-summary-read",
+          "render",
+          "revise",
+          "run-folder"
+        ]
+      },
+      "message": "Operation is not approved on this MCP surface."
+    },
+    "id": 2,
+    "jsonrpc": "2.0",
+    "result": null
+  },
+  "initialize": {
+    "error": null,
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+      "capabilities": {
+        "tools": {
+          "listChanged": false
+        }
+      },
+      "protocolVersion": "2024-11-05",
+      "serverInfo": {
+        "name": "pptx-agent-mcp",
+        "version": "0.1.0"
+      }
+    }
+  }
+}

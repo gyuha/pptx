@@ -1,0 +1,1 @@
+Extraction unsupported: fixtures/extract/sample_corrupt.docx (invalid_docx_package) - DOCX package is invalid or corrupted.

@@ -1,0 +1,44 @@
+task: deterministic document registry mapping
+command: uv run python -m pptx_agent.cli run-folder --in-dir /Users/gyuha/workspace/pptx/fixtures/extract --out-dir /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_output --artifacts-root /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts
+run1_exit: 1
+run2_exit: 1
+registry_path: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/document_registry.json
+map_entry_count: 5
+mapping_identical: True
+mapping_preview:
+  - born_digital_sample.pdf -> 63f552abb6d2fb99 (c29ca3af683b)
+  - extract_missing_metadata.json -> 7195e94f9a05a065 (a6c79a412bf9)
+  - overflow_trigger_sample.pdf -> e98d0dfdac33d106 (4bb37a053ca4)
+  - scan_like.png -> d5000a61103c4d4a (903f0ec2a4a5)
+  - scanned_like_sample.pdf -> 2fb3ee96f5f0c00f (ca48c3554a30)
+run1_stdout:
+  Run complete: /Users/gyuha/workspace/pptx/fixtures/extract/born_digital_sample.pdf -> /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/63f552abb6d2fb99/output.pptx (run_id=63f552abb6d2fb99, artifacts=/Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/63f552abb6d2fb99)
+  Run manifest written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/63f552abb6d2fb99/run_manifest.json
+  Run complete: /Users/gyuha/workspace/pptx/fixtures/extract/overflow_trigger_sample.pdf -> /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/e98d0dfdac33d106/output.pptx (run_id=e98d0dfdac33d106, artifacts=/Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/e98d0dfdac33d106)
+  Run failed: hook policy violation [post_render] qa_gate_failed
+  - critical_overflow_zero
+  Run hook error report written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/e98d0dfdac33d106/output.pptx.hooks.error.json
+  Run manifest written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/e98d0dfdac33d106/run_manifest.json
+  Run unsupported: /Users/gyuha/workspace/pptx/fixtures/extract/scanned_like_sample.pdf (scanned_or_image_only)
+  Run manifest written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/2fb3ee96f5f0c00f/run_manifest.json
+  Batch run complete: input_dir=/Users/gyuha/workspace/pptx/fixtures/extract output_dir=/Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_output batch_id=5624c98f4e37a04d
+  Document registry written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/document_registry.json
+  Batch manifest written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/batch_manifest.json
+run1_stderr:
+  <empty>
+run2_stdout:
+  Run complete: /Users/gyuha/workspace/pptx/fixtures/extract/born_digital_sample.pdf -> /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/63f552abb6d2fb99/output.pptx (run_id=63f552abb6d2fb99, artifacts=/Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/63f552abb6d2fb99)
+  Run manifest written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/63f552abb6d2fb99/run_manifest.json
+  Run complete: /Users/gyuha/workspace/pptx/fixtures/extract/overflow_trigger_sample.pdf -> /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/e98d0dfdac33d106/output.pptx (run_id=e98d0dfdac33d106, artifacts=/Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/e98d0dfdac33d106)
+  Run failed: hook policy violation [post_render] qa_gate_failed
+  - critical_overflow_zero
+  Run hook error report written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/e98d0dfdac33d106/output.pptx.hooks.error.json
+  Run manifest written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/e98d0dfdac33d106/run_manifest.json
+  Run unsupported: /Users/gyuha/workspace/pptx/fixtures/extract/scanned_like_sample.pdf (scanned_or_image_only)
+  Run manifest written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/docs/2fb3ee96f5f0c00f/run_manifest.json
+  Batch run complete: input_dir=/Users/gyuha/workspace/pptx/fixtures/extract output_dir=/Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_output batch_id=5624c98f4e37a04d
+  Document registry written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/document_registry.json
+  Batch manifest written: /Users/gyuha/workspace/pptx/.sisyphus/tmp/task3_det_artifacts/5624c98f4e37a04d/batch_manifest.json
+run2_stderr:
+  <empty>
+assertion: PASSED deterministic mapping check

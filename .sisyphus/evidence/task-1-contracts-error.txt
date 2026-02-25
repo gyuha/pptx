@@ -1,0 +1,10 @@
+expected-failure corpus: fixtures/corpus_invalid_missing_language.json
+- documents.0.language: String should have at least 1 character
+expected-failure evidence_graph: fixtures/evidence_graph_invalid_orphan_link.json
+- links: Value error, links include unknown evidence_id 'ev-999'
+expected-failure deck_outline: fixtures/deck_outline_invalid_missing_section.json
+- sections: Value error, sections missing required names: Risks
+expected-failure feedback_patch: fixtures/feedback_patch_invalid_missing_path.json
+- patches.0.path: Field required
+expected-failure batch_manifest: fixtures/batch_manifest_invalid_bad_hash.json
+- documents.0.sha256: String should match pattern '^[a-f0-9]{64}$'

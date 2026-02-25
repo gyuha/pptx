@@ -1,0 +1,3 @@
+Extraction unsupported: fixtures/extract/scanned_like_sample.pdf (scanned_or_image_only) - No extractable text found; document appears scanned or image-only. OCR is disabled.
+
+exit_code=2

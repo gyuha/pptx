@@ -1,0 +1,322 @@
+{
+  "analysis_summary": {
+    "error": null,
+    "id": 4,
+    "jsonrpc": "2.0",
+    "result": {
+      "content": [
+        {
+          "text": "{\"batch_id\": \"ff593ea785ac247e\", \"counts\": {\"failed\": 0, \"passed\": 3, \"total\": 3, \"unsupported\": 0}, \"documents\": [{\"doc_id\": \"a3fd8c01dd9de969\", \"failure_reason\": null, \"output_pptx\": \".sisyphus/evidence/task-12-output/a3fd8c01dd9de969.pptx\", \"run_dir\": \".sisyphus/evidence/task-12-artifacts/ff593ea785ac247e/docs/a3fd8c01dd9de969\", \"status\": \"pass\"}, {\"doc_id\": \"a5049e6ab20e9d50\", \"failure_reason\": null, \"output_pptx\": \".sisyphus/evidence/task-12-output/a5049e6ab20e9d50.pptx\", \"run_dir\": \".sisyphus/evidence/task-12-artifacts/ff593ea785ac247e/docs/a5049e6ab20e9d50\", \"status\": \"pass\"}, {\"doc_id\": \"cf15259cda0f8079\", \"failure_reason\": null, \"output_pptx\": \".sisyphus/evidence/task-12-output/cf15259cda0f8079.pptx\", \"run_dir\": \".sisyphus/evidence/task-12-artifacts/ff593ea785ac247e/docs/cf15259cda0f8079\", \"status\": \"pass\"}], \"runtime\": {\"image_model\": \"image-model-v1\", \"language\": \"ko-KR\", \"model_profile\": \"local\", \"text_model\": \"text-model-v1\"}, \"schema\": \"mcp.analysis_summary.v1\", \"status\": \"pass\"}",
+          "type": "text"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "ok": true,
+        "result": {
+          "batch_id": "ff593ea785ac247e",
+          "counts": {
+            "failed": 0,
+            "passed": 3,
+            "total": 3,
+            "unsupported": 0
+          },
+          "documents": [
+            {
+              "doc_id": "a3fd8c01dd9de969",
+              "failure_reason": null,
+              "output_pptx": ".sisyphus/evidence/task-12-output/a3fd8c01dd9de969.pptx",
+              "run_dir": ".sisyphus/evidence/task-12-artifacts/ff593ea785ac247e/docs/a3fd8c01dd9de969",
+              "status": "pass"
+            },
+            {
+              "doc_id": "a5049e6ab20e9d50",
+              "failure_reason": null,
+              "output_pptx": ".sisyphus/evidence/task-12-output/a5049e6ab20e9d50.pptx",
+              "run_dir": ".sisyphus/evidence/task-12-artifacts/ff593ea785ac247e/docs/a5049e6ab20e9d50",
+              "status": "pass"
+            },
+            {
+              "doc_id": "cf15259cda0f8079",
+              "failure_reason": null,
+              "output_pptx": ".sisyphus/evidence/task-12-output/cf15259cda0f8079.pptx",
+              "run_dir": ".sisyphus/evidence/task-12-artifacts/ff593ea785ac247e/docs/cf15259cda0f8079",
+              "status": "pass"
+            }
+          ],
+          "runtime": {
+            "image_model": "image-model-v1",
+            "language": "ko-KR",
+            "model_profile": "local",
+            "text_model": "text-model-v1"
+          },
+          "schema": "mcp.analysis_summary.v1",
+          "status": "pass"
+        },
+        "tool": "analysis-summary"
+      }
+    }
+  },
+  "initialize": {
+    "error": null,
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+      "capabilities": {
+        "tools": {
+          "listChanged": false
+        }
+      },
+      "protocolVersion": "2024-11-05",
+      "serverInfo": {
+        "name": "pptx-agent-mcp",
+        "version": "0.1.0"
+      }
+    }
+  },
+  "revise": {
+    "error": null,
+    "id": 5,
+    "jsonrpc": "2.0",
+    "result": {
+      "content": [
+        {
+          "text": "{\"exit_code\": 0, \"parent_run_id\": \"a3fd8c01dd9de969\", \"run_id\": \"4f5468b643e8d88b\", \"run_manifest_path\": \".sisyphus/evidence/task-12-artifacts/ff593ea785ac247e/docs/a3fd8c01dd9de969/run_manifest.json\", \"schema\": \"mcp.revise.result.v1\", \"status\": \"pass\", \"targeted_slide_ids\": [\"slide_001\"]}",
+          "type": "text"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "ok": true,
+        "result": {
+          "exit_code": 0,
+          "parent_run_id": "a3fd8c01dd9de969",
+          "run_id": "4f5468b643e8d88b",
+          "run_manifest_path": ".sisyphus/evidence/task-12-artifacts/ff593ea785ac247e/docs/a3fd8c01dd9de969/run_manifest.json",
+          "schema": "mcp.revise.result.v1",
+          "status": "pass",
+          "targeted_slide_ids": [
+            "slide_001"
+          ]
+        },
+        "tool": "revise"
+      }
+    }
+  },
+  "run_folder": {
+    "error": null,
+    "id": 3,
+    "jsonrpc": "2.0",
+    "result": {
+      "content": [
+        {
+          "text": "{\"batch_id\": \"ff593ea785ac247e\", \"batch_manifest_path\": \".sisyphus/evidence/task-12-artifacts/ff593ea785ac247e/batch_manifest.json\", \"counts\": {\"failed\": 0, \"passed\": 3, \"total\": 3, \"unsupported\": 0}, \"exit_code\": 0, \"schema\": \"mcp.run_folder.result.v1\", \"status\": \"pass\"}",
+          "type": "text"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "ok": true,
+        "result": {
+          "batch_id": "ff593ea785ac247e",
+          "batch_manifest_path": ".sisyphus/evidence/task-12-artifacts/ff593ea785ac247e/batch_manifest.json",
+          "counts": {
+            "failed": 0,
+            "passed": 3,
+            "total": 3,
+            "unsupported": 0
+          },
+          "exit_code": 0,
+          "schema": "mcp.run_folder.result.v1",
+          "status": "pass"
+        },
+        "tool": "run-folder"
+      }
+    }
+  },
+  "tools_list": {
+    "error": null,
+    "id": 2,
+    "jsonrpc": "2.0",
+    "result": {
+      "tools": [
+        {
+          "description": "Extract structured text/table blocks from a supported document (.pdf, .docx).",
+          "inputSchema": {
+            "properties": {
+              "input_pdf": {
+                "title": "Input Pdf",
+                "type": "string"
+              }
+            },
+            "required": [
+              "input_pdf"
+            ],
+            "title": "ExtractArgs",
+            "type": "object"
+          },
+          "name": "extract"
+        },
+        {
+          "description": "Normalize extract.v1 payload into normalize.v1 payload.",
+          "inputSchema": {
+            "properties": {
+              "extract_payload": {
+                "additionalProperties": true,
+                "title": "Extract Payload",
+                "type": "object"
+              }
+            },
+            "required": [
+              "extract_payload"
+            ],
+            "title": "NormalizeArgs",
+            "type": "object"
+          },
+          "name": "normalize"
+        },
+        {
+          "description": "Plan normalized payload into SlideSpec v1.",
+          "inputSchema": {
+            "properties": {
+              "normalized_payload": {
+                "additionalProperties": true,
+                "title": "Normalized Payload",
+                "type": "object"
+              }
+            },
+            "required": [
+              "normalized_payload"
+            ],
+            "title": "PlanArgs",
+            "type": "object"
+          },
+          "name": "plan"
+        },
+        {
+          "description": "Render SlideSpec v1 into deterministic PPTX + QA report.",
+          "inputSchema": {
+            "properties": {
+              "output_pptx": {
+                "title": "Output Pptx",
+                "type": "string"
+              },
+              "slidespec": {
+                "additionalProperties": true,
+                "title": "Slidespec",
+                "type": "object"
+              }
+            },
+            "required": [
+              "slidespec",
+              "output_pptx"
+            ],
+            "title": "RenderArgs",
+            "type": "object"
+          },
+          "name": "render"
+        },
+        {
+          "description": "Read and validate render hook QA summary JSON.",
+          "inputSchema": {
+            "properties": {
+              "qa_summary_path": {
+                "title": "Qa Summary Path",
+                "type": "string"
+              }
+            },
+            "required": [
+              "qa_summary_path"
+            ],
+            "title": "QaReadArgs",
+            "type": "object"
+          },
+          "name": "qa-summary-read"
+        },
+        {
+          "description": "Run deterministic folder orchestration with approved runtime options.",
+          "inputSchema": {
+            "additionalProperties": false,
+            "properties": {
+              "artifacts_root": {
+                "default": "artifacts/batches",
+                "title": "Artifacts Root",
+                "type": "string"
+              },
+              "continue_on_error": {
+                "default": true,
+                "title": "Continue On Error",
+                "type": "boolean"
+              },
+              "input_dir": {
+                "title": "Input Dir",
+                "type": "string"
+              },
+              "model_profile": {
+                "default": "local",
+                "enum": [
+                  "local",
+                  "cloud"
+                ],
+                "title": "Model Profile",
+                "type": "string"
+              },
+              "output_dir": {
+                "title": "Output Dir",
+                "type": "string"
+              }
+            },
+            "required": [
+              "input_dir",
+              "output_dir"
+            ],
+            "title": "RunFolderArgs",
+            "type": "object"
+          },
+          "name": "run-folder"
+        },
+        {
+          "description": "Read and summarize a batch manifest into deterministic analysis metrics.",
+          "inputSchema": {
+            "additionalProperties": false,
+            "properties": {
+              "batch_manifest_path": {
+                "title": "Batch Manifest Path",
+                "type": "string"
+              }
+            },
+            "required": [
+              "batch_manifest_path"
+            ],
+            "title": "AnalysisSummaryArgs",
+            "type": "object"
+          },
+          "name": "analysis-summary"
+        },
+        {
+          "description": "Trigger deterministic feedback-driven revision for one run directory.",
+          "inputSchema": {
+            "additionalProperties": false,
+            "properties": {
+              "feedback_path": {
+                "title": "Feedback Path",
+                "type": "string"
+              },
+              "run_dir": {
+                "title": "Run Dir",
+                "type": "string"
+              }
+            },
+            "required": [
+              "run_dir",
+              "feedback_path"
+            ],
+            "title": "ReviseArgs",
+            "type": "object"
+          },
+          "name": "revise"
+        }
+      ]
+    }
+  }
+}

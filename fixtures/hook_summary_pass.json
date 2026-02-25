@@ -1,0 +1,13 @@
+{
+  "run_id": "qa-fixture-run",
+  "schema": "render.hooks.qa.v1",
+  "input_slidespec": "fixtures/slidespec_qa_citation_complete.json",
+  "output_pptx": "fixtures/output.pptx",
+  "qa_report": "fixtures/qa_report_pass.json",
+  "status": "pass",
+  "checks": {
+    "critical_overflow_zero": true,
+    "slide_count_matches": true
+  },
+  "failures": []
+}

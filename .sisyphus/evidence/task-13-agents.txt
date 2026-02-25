@@ -1,0 +1,6 @@
+schema roles=agent.roles.v2 orchestration=agent.orchestration.v2
+run-folder: BatchManagerAgent[run-folder] -> CorpusAgent[extract,normalize,analysis-summary] -> OutlineAgent[plan] -> BuildAgent[pre_render_contract_gate,render,write_on_error_report] -> QAAgent[post_render_qa_gate,qa-summary-read]
+analysis-summary: BatchManagerAgent[analysis-summary] -> CorpusAgent[analysis-summary]
+revise: RevisionAgent[revise] -> BuildAgent[pre_render_contract_gate,render,write_on_error_report] -> QAAgent[post_render_qa_gate,qa-summary-read]
+gate_check: pre_render_contract_gate and post_render_qa_gate present in run-folder and revise flows
+result: PASS

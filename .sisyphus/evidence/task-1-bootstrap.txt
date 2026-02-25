@@ -1,0 +1,19 @@
+Task 1 Bootstrap Evidence
+Date: 2026-02-24
+
+$ uv python find
+/Users/gyuha/workspace/pptx/.venv/bin/python3
+
+$ uv sync
+Resolved 19 packages in 2ms
+Audited 19 packages in 2ms
+
+$ uv run python -m pptx_agent.cli
+(exit 0, no stderr)
+
+$ uv run python -c "import fitz, pdfplumber, pypdf, pptx, pydantic; print('ok')"
+ok
+
+$ uv run python -m compileall pptx_agent
+Listing 'pptx_agent'...
+Compiling 'pptx_agent/cli.py'...

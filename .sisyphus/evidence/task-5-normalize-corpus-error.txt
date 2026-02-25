@@ -1,0 +1,28 @@
+Task 5 Normalize Corpus Context Error Evidence
+
+Date: 2026-02-25
+
+Setup command:
+- Created malformed normalized fixture by removing top-level source_document_id from .sisyphus/tmp/orch-task5/normalized-pdf.json and writing .sisyphus/tmp/orch-task5/normalized-missing-source-document-id.json.
+
+Validation commands:
+1) uv run python -m pptx_agent.cli plan --in .sisyphus/tmp/orch-task5/normalized-missing-source-document-id.json --out .sisyphus/tmp/orch-task5/plan-from-malformed.json
+2) uv run python -m pptx_agent.cli normalize --in fixtures/extract/extract_missing_metadata.json --out .sisyphus/tmp/orch-task5/normalized-missing-metadata.json
+
+Command output:
+- Planning failed for .sisyphus/tmp/orch-task5/normalized-missing-source-document-id.json:
+  - 1 validation error for NormalizedPayload
+  - source_document_id
+    Field required [type=missing, input_value={...}, input_type=dict]
+  - EXIT_PLAN:1
+
+- Normalization failed for fixtures/extract/extract_missing_metadata.json:
+  - metadata: Field required
+  - EXIT_NORMALIZE_MALFORMED:1
+
+Result:
+- Missing required document provenance field (source_document_id) fails validation deterministically.
+- Existing fail-closed behavior for malformed extract payloads remains intact.
+
+Artifacts:
+- .sisyphus/tmp/orch-task5/normalized-missing-source-document-id.json

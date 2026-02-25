@@ -1,0 +1,34 @@
+{
+  "schema_version": "slidespec.v1",
+  "deck_id": "deck_b73bf3bddd59",
+  "slides": [
+    {
+      "slide_id": "slide_p001",
+      "title": "Quarterly Business Review",
+      "layout_hint": null,
+      "elements": [
+        {
+          "source_page": 1,
+          "evidence": "extract.pages[0].blocks[0]#p001-b0001",
+          "confidence": 0.869,
+          "kind": "title",
+          "text": "Quarterly Business Review"
+        },
+        {
+          "source_page": 1,
+          "evidence": "extract.pages[0].blocks[1]#p001-b0002",
+          "confidence": 0.884,
+          "kind": "body",
+          "text": "Revenue grew 17% year-over-year with stable gross margin."
+        },
+        {
+          "source_page": 1,
+          "evidence": "extract.pages[0].blocks[2]#p001-b0003",
+          "confidence": 0.887,
+          "kind": "body",
+          "text": "Top initiatives: pricing refresh, retention campaign, and upsell bundles."
+        }
+      ]
+    }
+  ]
+}

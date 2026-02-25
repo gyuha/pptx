@@ -1,0 +1,27 @@
+{
+  "schema_version": "slidespec.v1",
+  "deck_id": "deck-invalid-layout",
+  "slides": [
+    {
+      "slide_id": "slide-invalid-layout-001",
+      "title": "잘못된 레이아웃",
+      "layout_hint": "image_focus",
+      "elements": [
+        {
+          "kind": "title",
+          "text": "레이아웃 힌트 오류",
+          "source_page": 1,
+          "evidence": "fixtures/source/page-1.txt",
+          "confidence": 0.9
+        },
+        {
+          "kind": "body",
+          "text": "지원되지 않는 layout_hint를 검증합니다.",
+          "source_page": 1,
+          "evidence": "fixtures/source/page-1.txt",
+          "confidence": 0.9
+        }
+      ]
+    }
+  ]
+}

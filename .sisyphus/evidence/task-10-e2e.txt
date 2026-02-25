@@ -1,0 +1,2 @@
+Run complete: fixtures/extract/born_digital_sample.pdf -> artifacts/b611d124a215514e/output.pptx (run_id=b611d124a215514e, artifacts=artifacts/b611d124a215514e)
+Run manifest written: artifacts/b611d124a215514e/run_manifest.json

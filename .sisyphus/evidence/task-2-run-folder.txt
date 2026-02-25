@@ -1,0 +1,20 @@
+Task 2 Evidence - run-folder happy path
+
+Command:
+uv run python -m pptx_agent.cli run-folder --in-dir .sisyphus/tmp/task2/happy/in --out-dir .sisyphus/tmp/task2/happy/out --artifacts-root .sisyphus/tmp/task2/happy/artifacts --model-profile local
+
+CLI output excerpt:
+- Run complete: .sisyphus/tmp/task2/happy/in/01-born_digital_sample.pdf -> .sisyphus/tmp/task2/happy/artifacts/da00b899074c92b5/docs/388dac1ce52bca66/output.pptx
+- Batch manifest written: .sisyphus/tmp/task2/happy/artifacts/da00b899074c92b5/batch_manifest.json
+
+Assertions:
+- exit code: 0
+- output PPTX exists: .sisyphus/tmp/task2/happy/out/388dac1ce52bca66.pptx
+- batch manifest status/counts:
+  - status=pass
+  - counts.total=1
+  - counts.passed=1
+  - counts.failed=0
+  - counts.unsupported=0
+- per-doc run dir exists: .sisyphus/tmp/task2/happy/artifacts/da00b899074c92b5/docs/388dac1ce52bca66
+- per-doc artifacts include: run_manifest.json, qa.preflight.json, qa.postrender.json

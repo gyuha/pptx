@@ -1,0 +1,21 @@
+Task 8 Evidence: Unsupported Layout Hint Failure Path
+
+Command:
+uv run python -m pptx_agent.cli render --in fixtures/slidespec_invalid_layout_hint.json --out .sisyphus/tmp/task8/invalid-layout.pptx ; printf "\n__EXIT_CODE__=%s\n" $?
+
+Output:
+Render failed: unsupported-layout hint='image_focus' on slide_id='slide-invalid-layout-001'
+Render hook error report written: .sisyphus/tmp/task8/invalid-layout.pptx.hooks.error.json
+
+__EXIT_CODE__=2
+
+Command:
+python -c "import json, pathlib; a=json.loads(pathlib.Path('.sisyphus/tmp/task8/invalid-layout.pptx.hooks.error.json').read_text()); print('invalid_layout_reason=', a['reason']); print('invalid_layout_phase=', a['phase'])"
+
+Output:
+invalid_layout_reason= unsupported_layout
+invalid_layout_phase= render
+
+Observed key artifact fields:
+- .sisyphus/tmp/task8/invalid-layout.pptx.hooks.error.json: schema=render.hooks.error.v1, reason=unsupported_layout, phase=render
+- details[0] includes unsupported-layout hint='image_focus' on slide_id='slide-invalid-layout-001'

@@ -1,0 +1,2 @@
+DRY-RUN start: pdf-to-pptx-stage-handoff
+RESULT pass: role handoff and tool boundaries validated

@@ -1,0 +1,11 @@
+scenario=failure_path_pre_render_rejection
+command=uv run python -m pptx_agent.cli render --in /Users/gyuha/workspace/pptx/.sisyphus/evidence/task-7-invalid-slidespec.json --out /Users/gyuha/workspace/pptx/.sisyphus/evidence/task-7-error-output.pptx
+exit_code=1
+stdout<<EOF
+Render failed: hook policy violation [pre_render] slidespec_validation_failed
+- slides.0.elements.0.source_page: Field required
+Render hook error report written: /Users/gyuha/workspace/pptx/.sisyphus/evidence/task-7-error-output.pptx.hooks.error.json
+EOF
+stderr<<EOF
+
+EOF

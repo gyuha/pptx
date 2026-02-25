@@ -1,0 +1,81 @@
+{
+  "input": {
+    "file": "fixtures/extract/sample_mixed.docx",
+    "page_count": 1
+  },
+  "metadata": {
+    "confidence_policy": "heuristic-v1",
+    "fallback_engine": "none",
+    "fallback_used": false,
+    "primary_engine": "docx-xml"
+  },
+  "pages": [
+    {
+      "blocks": [
+        {
+          "bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "block_id": "p001-b0001",
+          "confidence": 0.9,
+          "confidence_meta": {
+            "engine": "docx-xml",
+            "signals": [
+              "paragraph"
+            ]
+          },
+          "kind": "text",
+          "text": "RFP Response Executive Summary"
+        },
+        {
+          "bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "block_id": "p001-b0002",
+          "confidence": 0.9,
+          "confidence_meta": {
+            "engine": "docx-xml",
+            "signals": [
+              "paragraph"
+            ]
+          },
+          "kind": "text",
+          "text": "We propose a phased delivery with measurable milestones."
+        },
+        {
+          "bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "block_id": "p001-t0003",
+          "confidence": 0.82,
+          "confidence_meta": {
+            "engine": "docx-xml",
+            "signals": [
+              "table"
+            ]
+          },
+          "kind": "table",
+          "text": "Phase\tTimeline\nDiscovery\t2 weeks"
+        }
+      ],
+      "page_number": 1,
+      "size": {
+        "height": 842.0,
+        "width": 595.0
+      }
+    }
+  ],
+  "reason": null,
+  "reason_code": null,
+  "schema_version": "extract.v1",
+  "status": "ok"
+}

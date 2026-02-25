@@ -1,0 +1,147 @@
+{
+  "schema_version": "deck_outline.v1",
+  "deck_id": "deck-001",
+  "source_document_id": "doc-001",
+  "language": "ko-KR",
+  "target_slide_count": 8,
+  "sections": [
+    {
+      "section_id": "sec-01",
+      "section_name": "Problem",
+      "intent": "고객 과제와 사업 필요성을 명확히 정의합니다.",
+      "summary": "고객의 핵심 과제를 정의합니다.",
+      "slides": [
+        {
+          "slide_id": "slide-001",
+          "title": "문제 정의",
+          "objective": "핵심 문제를 정렬합니다.",
+          "evidence_ids": ["ev-001"],
+          "body_bullets": ["현행 프로세스의 병목 구간을 제시합니다."],
+          "visual": {"kind": "none"}
+        }
+      ]
+    },
+    {
+      "section_id": "sec-02",
+      "section_name": "Scope",
+      "intent": "수행 범위와 제외 범위를 구조적으로 정리합니다.",
+      "summary": "수행 범위를 정의합니다.",
+      "slides": [
+        {
+          "slide_id": "slide-002",
+          "title": "범위 정의",
+          "objective": "포함/제외 항목을 확정합니다.",
+          "evidence_ids": ["ev-002"],
+          "body_bullets": ["요구 범위를 업무 영역별로 구분합니다."],
+          "visual": {"kind": "none"}
+        }
+      ]
+    },
+    {
+      "section_id": "sec-03",
+      "section_name": "Approach",
+      "intent": "실행 가능한 방법론과 추진 전략을 제안합니다.",
+      "summary": "제안 접근법을 제시합니다.",
+      "slides": [
+        {
+          "slide_id": "slide-003",
+          "title": "추진 접근법",
+          "objective": "실행 전략을 설명합니다.",
+          "evidence_ids": ["ev-003"],
+          "body_bullets": ["분석-설계-구축의 단계형 접근을 적용합니다."],
+          "visual": {
+            "kind": "image",
+            "image_prompt": "기업 제안서용 단계형 실행 로드맵 인포그래픽",
+            "image_model": "image-model-v1",
+            "image_seed": 42
+          }
+        }
+      ]
+    },
+    {
+      "section_id": "sec-04",
+      "section_name": "Delivery Plan",
+      "intent": "단계별 산출물과 납품 체계를 제시합니다.",
+      "summary": "납품 계획을 설명합니다.",
+      "slides": [
+        {
+          "slide_id": "slide-004",
+          "title": "납품 계획",
+          "objective": "단계별 산출물을 정의합니다.",
+          "evidence_ids": ["ev-004"],
+          "body_bullets": ["마일스톤 기준 산출물과 승인 절차를 명시합니다."],
+          "visual": {"kind": "table"}
+        }
+      ]
+    },
+    {
+      "section_id": "sec-05",
+      "section_name": "Timeline",
+      "intent": "마일스톤 중심 일정 계획을 제시합니다.",
+      "summary": "전체 일정을 제시합니다.",
+      "slides": [
+        {
+          "slide_id": "slide-005",
+          "title": "프로젝트 일정",
+          "objective": "주요 일정을 공유합니다.",
+          "evidence_ids": ["ev-005"],
+          "body_bullets": ["12주 일정 기준 주요 마일스톤을 제시합니다."],
+          "visual": {"kind": "none"}
+        }
+      ]
+    },
+    {
+      "section_id": "sec-06",
+      "section_name": "Pricing Assumptions",
+      "intent": "가격 산정의 전제와 가정을 명시합니다.",
+      "summary": "가격 가정을 설명합니다.",
+      "slides": [
+        {
+          "slide_id": "slide-006",
+          "title": "가격 가정",
+          "objective": "비용 산정 기준을 명확히 합니다.",
+          "evidence_ids": ["ev-006"],
+          "body_bullets": ["범위/일정/인력 기준의 비용 가정을 정의합니다."],
+          "visual": {"kind": "none"}
+        }
+      ]
+    },
+    {
+      "section_id": "sec-08",
+      "section_name": "Differentiators",
+      "intent": "경쟁 대비 차별화 포인트를 강조합니다.",
+      "summary": "차별화 요소를 강조합니다.",
+      "slides": [
+        {
+          "slide_id": "slide-008",
+          "title": "차별화 포인트",
+          "objective": "당사 경쟁 우위를 제시합니다.",
+          "evidence_ids": ["ev-008"],
+          "body_bullets": ["유사 프로젝트 실적 기반 차별화를 설명합니다."],
+          "visual": {"kind": "none"}
+        }
+      ]
+    },
+    {
+      "section_id": "sec-09",
+      "section_name": "Next Steps",
+      "intent": "의사결정 이후 후속 실행 단계를 안내합니다.",
+      "summary": "후속 액션을 제안합니다.",
+      "slides": [
+        {
+          "slide_id": "slide-009",
+          "title": "다음 단계",
+          "objective": "의사결정과 착수 절차를 정리합니다.",
+          "evidence_ids": ["ev-009"],
+          "body_bullets": ["제안 승인 이후 킥오프 절차를 안내합니다."],
+          "visual": {"kind": "none"}
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "model_profile": "local",
+    "language": "ko-KR",
+    "image_generation_required": true
+  }
+}

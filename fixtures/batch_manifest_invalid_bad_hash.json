@@ -1,0 +1,46 @@
+{
+  "schema_version": "batch_manifest.v1",
+  "batch_id": "batch-20260225-001",
+  "status": "fail",
+  "input_dir": "fixtures/rfp_input",
+  "output_dir": "output",
+  "artifacts_root": "artifacts/batches",
+  "runtime": {
+    "model_profile": "local",
+    "text_model": "text-model-v1",
+    "image_model": "image-model-v1",
+    "language": "ko-KR"
+  },
+  "counts": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "unsupported": 0
+  },
+  "documents": [
+    {
+      "doc_id": "doc-001",
+      "input_file": "fixtures/rfp_input/doc-001.pdf",
+      "sha256": "not-a-sha256",
+      "status": "fail",
+      "run_dir": "artifacts/batches/batch-20260225-001/docs/doc-001",
+      "failure_reason": "qa_gate_failed",
+      "image_generation": {
+        "requested": 1,
+        "succeeded": 0,
+        "failed": 1,
+        "image_model": "image-model-v1"
+      },
+      "image_traces": [
+        {
+          "slide_id": "slide_003",
+          "element_index": 2,
+          "image_prompt": "기업 제안서용 추진 전략 인포그래픽",
+          "image_model": "image-model-v1",
+          "image_seed": null,
+          "image_path": "artifacts/batches/batch-20260225-001/docs/doc-001/output.pptx.images/slide_003_image_02_deadbeefcafe.png"
+        }
+      ]
+    }
+  ]
+}

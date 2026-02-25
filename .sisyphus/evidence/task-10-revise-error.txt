@@ -1,0 +1,7 @@
+Revise failed: unknown_target: slide_id='slide-999' not found
+
+--- verification ---
+exit_code=1
+output_hash_before=4e7cfba5e569f4a0727311ea9139785ff0d3ae049825aedd1deb5539ac318063
+output_hash_after=4e7cfba5e569f4a0727311ea9139785ff0d3ae049825aedd1deb5539ac318063
+output_overwritten=False

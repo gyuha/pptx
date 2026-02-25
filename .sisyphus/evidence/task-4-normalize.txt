@@ -1,0 +1,10 @@
+Scenario: Happy path normalization
+Input: .sisyphus/evidence/task-3-extract.json
+Run A output: .sisyphus/evidence/task-4-normalized-a.json
+Run B output: .sisyphus/evidence/task-4-normalized-b.json
+Deck IDs stable: True (deck_b73bf3bddd59 vs deck_b73bf3bddd59)
+Element IDs stable: True
+Provenance complete: True
+Provenance coverage: 1.0
+Unsupported report: {"counts_by_reason": {}, "has_unsupported": false, "items": []}
+Status code expectation met: True

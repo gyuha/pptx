@@ -1,0 +1,3 @@
+Validation failed for fixtures/slidespec_missing_source_page.json:
+- slides.0.elements.0.source_page: Field required
+exit_code=1

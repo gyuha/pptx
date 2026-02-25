@@ -1,0 +1,60 @@
+{
+  "initialize": {
+    "error": null,
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+      "capabilities": {
+        "tools": {
+          "listChanged": false
+        }
+      },
+      "protocolVersion": "2024-11-05",
+      "serverInfo": {
+        "name": "pptx-agent-mcp",
+        "version": "0.1.0"
+      }
+    }
+  },
+  "invalid_payload_call": {
+    "error": {
+      "code": -32602,
+      "data": {
+        "errors": [
+          {
+            "input": 123,
+            "loc": [
+              "input_pdf"
+            ],
+            "msg": "Input should be a valid string",
+            "type": "string_type",
+            "url": "https://errors.pydantic.dev/2.11/v/string_type"
+          }
+        ],
+        "tool": "extract"
+      },
+      "message": "Invalid params for tool call."
+    },
+    "id": 3,
+    "jsonrpc": "2.0",
+    "result": null
+  },
+  "unsafe_tool_call": {
+    "error": {
+      "code": -32601,
+      "data": {
+        "allowed_tools": [
+          "extract",
+          "normalize",
+          "plan",
+          "qa-summary-read",
+          "render"
+        ]
+      },
+      "message": "Operation is not approved on this MCP surface."
+    },
+    "id": 2,
+    "jsonrpc": "2.0",
+    "result": null
+  }
+}

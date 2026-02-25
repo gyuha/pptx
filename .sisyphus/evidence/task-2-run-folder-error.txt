@@ -1,0 +1,31 @@
+Task 2 Evidence - run-folder unsupported file policy
+
+Commands:
+1) uv run python -m pptx_agent.cli run-folder --in-dir .sisyphus/tmp/task2/error/in --out-dir .sisyphus/tmp/task2/error/out --artifacts-root .sisyphus/tmp/task2/error/artifacts --model-profile local
+2) uv run python -m pptx_agent.cli run-folder --in-dir .sisyphus/tmp/task2/error/in --out-dir .sisyphus/tmp/task2/error/out --artifacts-root .sisyphus/tmp/task2/error/artifacts --model-profile local; rc=$?; [ $rc -eq 1 ]
+
+Input set:
+- 01-born_digital_sample.pdf (supported)
+- 02-scan_like.png (unsupported extension)
+
+CLI output excerpt:
+- Run complete: .sisyphus/tmp/task2/error/in/01-born_digital_sample.pdf -> .sisyphus/tmp/task2/error/artifacts/b05c599962e4a26d/docs/388dac1ce52bca66/output.pptx
+- Batch manifest written: .sisyphus/tmp/task2/error/artifacts/b05c599962e4a26d/batch_manifest.json
+
+Assertions:
+- continue-on-error behavior: processing continued after unsupported file (supported PDF still produced output)
+- policy exit behavior: final run-folder exit code is 1 when unsupported/failure exists (verified via rc assertion command)
+- output PPTX produced for supported document: .sisyphus/tmp/task2/error/out/388dac1ce52bca66.pptx
+- batch manifest status/counts:
+  - status=partial_fail
+  - counts.total=2
+  - counts.passed=1
+  - counts.failed=0
+  - counts.unsupported=1
+- unsupported doc record includes:
+  - status=unsupported
+  - failure_reason=unsupported_file_type
+
+Run-local regression evidence:
+- Command: uv run python -m pptx_agent.cli run-local --in fixtures/extract/born_digital_sample.pdf --artifacts-root .sisyphus/tmp/task2/run-local/artifacts
+- Result: exit code 0 with run manifest at .sisyphus/tmp/task2/run-local/artifacts/b611d124a215514e/run_manifest.json

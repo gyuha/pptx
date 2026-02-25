@@ -1,0 +1,7 @@
+Scenario: Failure path missing extraction metadata
+Input: fixtures/extract/extract_missing_metadata.json
+Exit code: 1
+STDOUT:
+Normalization failed for fixtures/extract/extract_missing_metadata.json:
+- metadata: Field required
+STDERR:
