@@ -1,0 +1,17 @@
+{
+  "name": "pptx",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json --noEmit false",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "proposal:make": "node ./src/cli/proposal-make-not-implemented.js",
+    "proposal:doctor": "node ./scripts/proposal-doctor.js"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "typescript": "5.9.2",
+    "vitest": "3.2.4"
+  }
+}

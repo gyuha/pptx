@@ -9,7 +9,7 @@
 > - Tests-after suite, deterministic output rules, and CI checks
 > **Effort**: Medium
 > **Parallel**: YES - 3 waves
-> **Critical Path**: Task 1 -> Task 3 -> Task 5 -> Task 6 -> Task 8 -> Task 9 -> Task 10
+> **Critical Path**: Task 1 -> Task 4 -> Task 5 -> Task 6 -> Task 8 -> Task 9 -> Task 10
 
 ## Context
 ### Original Request
@@ -64,14 +64,14 @@
 - No vague "looks good" verification; all checks must be machine-verifiable.
 
 ## Verification Strategy
-> ZERO HUMAN INTERVENTION - all verification is agent-executed.
+> ZERO MANUAL EDITING - verification is automated via commands/tests/CI.
 - Test decision: tests-after with Vitest.
 - QA policy: every task includes happy + failure scenario.
 - Evidence: `.sisyphus/evidence/task-{N}-{slug}.{ext}`.
 
 ## Execution Strategy
 ### Parallel Execution Waves
-> Target: 5-8 tasks per wave. Shared dependencies extracted into Wave 1.
+> Target: maximize safe parallelism by dependency constraints; wave sizes may vary.
 
 Wave 1: Foundation and contracts (Tasks 1-4)
 Wave 2: Parsing/templating/rendering core (Tasks 5-8)
@@ -117,7 +117,7 @@ Wave 3: Command integration, tests, CI hardening (Tasks 9-10)
   **Acceptance Criteria**:
   - [ ] `npm run build` exits 0.
   - [ ] `npm run typecheck` exits 0.
-  - [ ] `npm test` exits 0 with at least one smoke test file discovered.
+  - [ ] `npm test -- tests/smoke/scaffold.test.ts` exits 0.
 
   **QA Scenarios**:
   ```bash
@@ -155,7 +155,7 @@ Wave 3: Command integration, tests, CI hardening (Tasks 9-10)
 
   **Acceptance Criteria**:
   - [ ] `docs/skills-mcp-setup.md` exists with install commands, version pinning, and security guardrails.
-  - [ ] `npm run proposal:doctor` (or equivalent) validates required local tools and exits 0 when configured.
+  - [ ] `npm run proposal:doctor` validates Node.js, npm, MarkItDown runtime, and template accessibility; exits 0 only when all checks pass.
 
   **QA Scenarios**:
   ```bash
@@ -215,6 +215,7 @@ Wave 3: Command integration, tests, CI hardening (Tasks 9-10)
 
   **What to do**: Implement scanner for `input/` supporting `.pdf`/`.docx`, stable sort order, collision-safe naming (content hash stem), and sidecar manifest metadata.
   **Must NOT do**: Process unsupported file types silently.
+  - Must reject path traversal, symlink escapes, and absolute paths outside project root for `--input`, `--output`, and `--template`.
 
   **Recommended Agent Profile**:
   - Category: `quick` - Reason: deterministic file system utility logic.
@@ -232,6 +233,7 @@ Wave 3: Command integration, tests, CI hardening (Tasks 9-10)
   - [ ] For same input set, two runs produce identical ordered file list.
   - [ ] Input contract merges all discovered files into one deterministic processing batch.
   - [ ] Manifest contains `sourceFiles`, `modelHash`, `templateHash`, and timestamp.
+  - [ ] Paths resolving outside project root fail fast with `PATH_OUT_OF_SCOPE` and no files are written.
 
   **QA Scenarios**:
   ```bash
@@ -270,6 +272,8 @@ Wave 3: Command integration, tests, CI hardening (Tasks 9-10)
   **Acceptance Criteria**:
   - [ ] PDF and DOCX fixtures each produce non-empty markdown payload.
   - [ ] Parser failures include input filename and standardized error code.
+  - [ ] Encrypted/password-protected PDFs fail with `PARSE_UNSUPPORTED_ENCRYPTED` and source filename.
+  - [ ] Inputs above configured size limit fail with `INPUT_TOO_LARGE` before parse attempt.
 
   **QA Scenarios**:
   ```bash
@@ -284,6 +288,12 @@ Wave 3: Command integration, tests, CI hardening (Tasks 9-10)
     Steps: parse fixtures/input/corrupt.pdf
     Expected: exits non-zero with code PARSE_FAILED and source filename
     Evidence: .sisyphus/evidence/task-5-parser-error.log
+
+  Scenario: Failure on encrypted PDF
+    Tool: interactive_bash
+    Steps: parse fixtures/input/encrypted.pdf
+    Expected: exits non-zero with PARSE_UNSUPPORTED_ENCRYPTED and source filename
+    Evidence: .sisyphus/evidence/task-5-parser-encrypted-error.log
   ```
 
   **Commit**: YES | Message: `feat(parser): add markitdown adapters for pdf and docx` | Files: `src/parsers/**`, `tests/parsers/**`, `fixtures/input/**`
@@ -356,7 +366,7 @@ Wave 3: Command integration, tests, CI hardening (Tasks 9-10)
   Scenario: Failure on nonexistent template path
     Tool: interactive_bash
     Steps: run command with --template ./missing/template.pptx
-    Expected: exits non-zero with TEMPLATE_NOT_FOUND
+    Expected: exits non-zero with TEMPLATE_NOT_FOUND or PATH_OUT_OF_SCOPE; output directory remains unchanged
     Evidence: .sisyphus/evidence/task-7-template-error.log
   ```
 
@@ -480,7 +490,7 @@ Wave 3: Command integration, tests, CI hardening (Tasks 9-10)
 ## Final Verification Wave (4 parallel agents, ALL must APPROVE)
 - [ ] F1. Plan Compliance Audit - oracle
 - [ ] F2. Code Quality Review - unspecified-high
-- [ ] F3. Real Manual QA - unspecified-high (+ playwright if UI)
+- [ ] F3. Automated Runtime QA - unspecified-high (CLI/E2E replay only; no manual editing)
 - [ ] F4. Scope Fidelity Check - deep
 
 ## Commit Strategy

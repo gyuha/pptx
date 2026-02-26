@@ -1,0 +1,5 @@
+
+> pptx@0.0.0 proposal:make
+> node ./src/cli/proposal-make-not-implemented.js --help
+
+proposal:make command not implemented for Task 1 scaffold

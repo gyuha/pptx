@@ -1,0 +1,15 @@
+- Bootstrapped minimal Node+TypeScript scaffold with strict TS, Vitest smoke baseline, and deterministic directory placeholders.
+- Verified required scripts exist: build, typecheck, test, proposal:make.
+- Installed typescript-language-server and reran lsp_diagnostics; changed TS files are now clean.
+- Added `proposal:doctor` as a deterministic environment gate that reports grouped remediation and non-zero exit on any failed prerequisite.
+- MarkItDown runtime checks are reliable when using Python import validation (`import markitdown`) instead of only checking CLI presence.
+- Template accessibility is easiest to validate reproducibly via `PROPOSAL_TEMPLATE_PATH` override during setup checks.
+- Proposal model validation stays deterministic when required fields are checked in a fixed order before type-specific checks.
+- Stable validation identifiers (`PROPOSAL_MODEL_REQUIRED_FIELD_MISSING`) are easiest to keep contract-safe when tests assert both `code` and exact `message`.
+
+- Input discovery stays deterministic when directory entries and final relative paths are both sorted with a strict lexical comparator and normalized to POSIX separators.
+- Deterministic output naming is stable when stem hashing uses ordered `(relativePath, contentHash)` tuples instead of filesystem metadata.
+- Path-scope enforcement is safer when all user paths go through one resolver that checks parent traversal, absolute out-of-root paths, and symlink-based escapes.
+- MarkItDown adapter integration is deterministic when python emits JSON diagnostics to stdout and TypeScript normalizes all failures into stable parser codes.
+- Encrypted PDF detection is reliable by classifying MarkItDown diagnostics containing `PDFPasswordIncorrect`/`password`/`encrypted` into `PARSE_UNSUPPORTED_ENCRYPTED`.
+- Oversize handling is safest as a preflight `statSync` gate so `INPUT_TOO_LARGE` is raised before invoking the parser runtime.

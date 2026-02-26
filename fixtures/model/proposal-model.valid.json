@@ -1,0 +1,15 @@
+{
+  "title": "RPF Response for ACME Cloud Modernization",
+  "agenda": [
+    "Context and business goals",
+    "Recommended solution",
+    "Execution roadmap",
+    "Budget and timeline"
+  ],
+  "valueProposition": "Reduce operating costs while improving delivery speed through a phased cloud modernization program.",
+  "executionPlan": "Deliver in three phases: assessment, pilot migration, and full rollout with governance checkpoints.",
+  "budgetTimeline": {
+    "budget": "TBD",
+    "timeline": "TBD"
+  }
+}

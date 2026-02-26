@@ -1,0 +1,13 @@
+- Chose CommonJS TypeScript scaffold for minimal startup friction and deterministic npm script execution.
+- Implemented proposal:make as explicit non-implemented Node entrypoint that always exits non-zero with clear message, including when called with --help, to satisfy Task 1 negative acceptance behavior.
+- Implemented `scripts/proposal-doctor.js` in plain Node.js CommonJS to avoid adding dependencies while keeping deterministic exit semantics.
+- Adopted secure-by-default MCP posture: optional MarkItDown MCP stays disabled unless explicitly enabled, and localhost-only host values are enforced when enabled.
+- Standardized template readiness check on `PROPOSAL_TEMPLATE_PATH` override first, then `input/template.pptx`, to align with upcoming template precedence work.
+- Defined `ProposalModel` runtime contract with explicit required section keys (`title`, `agenda`, `valueProposition`, `executionPlan`, `budgetTimeline`) and fail-fast deterministic errors.
+- Chose a custom `ProposalModelValidationError` class (code + field + message) instead of external schema dependencies to keep scaffold minimal and CommonJS-friendly.
+
+- Added a dedicated IO contract layer (`src/io`) with `IoContractError` codes (`PATH_OUT_OF_SCOPE`, `UNSUPPORTED_INPUT_EXTENSION`, `INPUT_DIR_NOT_FOUND`) to keep failure semantics explicit and testable.
+- Chose deterministic output stem format `proposal-<sha256[:16]>` derived from sorted input `(relativePath, contentHash)` tuples for collision-safe stable naming.
+- Rejected symlinks in discovery traversal and in direct scoped path targets to enforce path-scope guarantees for `--input`, `--output`, and `--template` values.
+- Added `src/parsers/markitdown-adapter.ts` as local-runtime default (python subprocess) and explicitly avoided MCP transport in the parse path.
+- Standardized parser contract to `ParserContractError` with stable codes (`PARSE_FAILED`, `PARSE_UNSUPPORTED_ENCRYPTED`, `INPUT_TOO_LARGE`) and required `sourceFile` for deterministic diagnostics.
