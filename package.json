@@ -6,12 +6,19 @@
     "build": "tsc -p tsconfig.json --noEmit false",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
-    "proposal:make": "node ./src/cli/proposal-make-not-implemented.js",
+    "proposal:make": "node ./dist/cli/index.js",
+    "proposal:make:dev": "tsx ./src/cli/index.ts",
     "proposal:doctor": "node ./scripts/proposal-doctor.js"
   },
   "devDependencies": {
     "@types/node": "24.3.0",
+    "adm-zip": "0.5.16",
+    "jszip": "3.10.1",
+    "tsx": "4.19.2",
     "typescript": "5.9.2",
     "vitest": "3.2.4"
+  },
+  "dependencies": {
+    "pptxgenjs": "3.12.0"
   }
 }

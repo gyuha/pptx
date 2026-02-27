@@ -1,0 +1,300 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1772109662393,
+  "projectRoot": "/Users/gyuha/workspace/pptx.worktree/try02",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "vitest",
+        "version": "3.2.4",
+        "category": "testing"
+      }
+    ],
+    "packageManager": "pnpm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "pnpm build",
+    "testCommand": "pnpm test",
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {
+      "build": "tsc -p tsconfig.json --noEmit false",
+      "typecheck": "tsc -p tsconfig.json --noEmit",
+      "test": "vitest run",
+      "proposal:make": "node ./src/cli/proposal-make-not-implemented.js",
+      "proposal:doctor": "node ./scripts/proposal-doctor.js"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs",
+      "scripts",
+      "src",
+      "tests"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "dist": {
+      "path": "dist",
+      "purpose": "Distribution/build output",
+      "fileCount": 1,
+      "lastAccessed": 1772109662386,
+      "keyFiles": [
+        "index.js"
+      ]
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 1,
+      "lastAccessed": 1772109662389,
+      "keyFiles": [
+        "skills-mcp-setup.md"
+      ]
+    },
+    "fixtures": {
+      "path": "fixtures",
+      "purpose": "Test fixtures",
+      "fileCount": 1,
+      "lastAccessed": 1772109662389,
+      "keyFiles": []
+    },
+    "input": {
+      "path": "input",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1772109662390,
+      "keyFiles": []
+    },
+    "output": {
+      "path": "output",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1772109662390,
+      "keyFiles": []
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 1,
+      "lastAccessed": 1772109662390,
+      "keyFiles": [
+        "proposal-doctor.js"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 1,
+      "lastAccessed": 1772109662390,
+      "keyFiles": [
+        "index.ts"
+      ]
+    },
+    "tests": {
+      "path": "tests",
+      "purpose": "Test files",
+      "fileCount": 0,
+      "lastAccessed": 1772109662390,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "tests/template/resolve-template.test.ts",
+      "accessCount": 10,
+      "lastAccessed": 1772109966195,
+      "type": "file"
+    },
+    {
+      "path": "src/render/pptx-renderer.ts",
+      "accessCount": 6,
+      "lastAccessed": 1772109976567,
+      "type": "file"
+    },
+    {
+      "path": ".sisyphus/plans/rpf-to-pptx-generator.md",
+      "accessCount": 5,
+      "lastAccessed": 1772110001246,
+      "type": "file"
+    },
+    {
+      "path": "src/normalize/to-proposal-model.ts",
+      "accessCount": 4,
+      "lastAccessed": 1772109835300,
+      "type": "file"
+    },
+    {
+      "path": "tests/normalize/to-proposal-model.test.ts",
+      "accessCount": 3,
+      "lastAccessed": 1772109839701,
+      "type": "file"
+    },
+    {
+      "path": "tests/e2e/proposal-generation.test.ts",
+      "accessCount": 3,
+      "lastAccessed": 1772109897749,
+      "type": "file"
+    },
+    {
+      "path": "src/io/errors.ts",
+      "accessCount": 3,
+      "lastAccessed": 1772109902784,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 2,
+      "lastAccessed": 1772109827840,
+      "type": "file"
+    },
+    {
+      "path": "src/domain/proposal-model.ts",
+      "accessCount": 2,
+      "lastAccessed": 1772109835289,
+      "type": "file"
+    },
+    {
+      "path": "src/io/discovery.ts",
+      "accessCount": 2,
+      "lastAccessed": 1772110004278,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 1,
+      "lastAccessed": 1772109714641,
+      "type": "file"
+    },
+    {
+      "path": "src/cli/proposal-make-not-implemented.js",
+      "accessCount": 1,
+      "lastAccessed": 1772109721955,
+      "type": "file"
+    },
+    {
+      "path": "vitest.config.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772109827845,
+      "type": "file"
+    },
+    {
+      "path": "tsconfig.json",
+      "accessCount": 1,
+      "lastAccessed": 1772109830244,
+      "type": "file"
+    },
+    {
+      "path": "src/io/manifest.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772109830254,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 1,
+      "lastAccessed": 1772109833465,
+      "type": "directory"
+    },
+    {
+      "path": "src/parsers/markitdown-adapter.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772109835295,
+      "type": "file"
+    },
+    {
+      "path": "tests/parsers/markitdown-adapter.test.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772109839709,
+      "type": "file"
+    },
+    {
+      "path": "src/io/path-scope.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772109845831,
+      "type": "file"
+    },
+    {
+      "path": "src/config/runtime-config.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772109860714,
+      "type": "file"
+    },
+    {
+      "path": "src/template/resolve-template.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772109860779,
+      "type": "file"
+    },
+    {
+      "path": "scripts/collect-evidence.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772109866345,
+      "type": "file"
+    },
+    {
+      "path": "src/render/index.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772109883365,
+      "type": "file"
+    },
+    {
+      "path": "src/config/index.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772109900359,
+      "type": "file"
+    },
+    {
+      "path": "src/template/index.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772109900417,
+      "type": "file"
+    },
+    {
+      "path": "tests/render/pptx-renderer.test.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772109904018,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}naming.ts",
+      "accessCount": 1,
+      "lastAccessed": 1772110004278,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

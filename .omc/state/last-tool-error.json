@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"npm run typecheck\",\"description\":\"Run TypeScript typecheck\"}",
+  "error": "Exit code 2\n\n> pptx@0.0.0 typecheck\n> tsc -p tsconfig.json --noEmit\n\nsrc/render/pptx-renderer.ts(263,3): error TS2322: Type '(masterName?: string | undefined) => Slide' is not assignable to type '{ (props?: AddSlideProps | undefined): Slide; (masterName?: string | undefined): Slide; }'.\n  Types of parameters 'masterName' and 'props' are incompatible.\n    Type 'AddSlideProps | undefined' is not assignable to type 'string | undefined'.\n      Type 'AddSlideProps' is not assignable to type 'string'.",
+  "timestamp": "2026-02-26T12:45:53.447Z",
+  "retry_count": 17
+}

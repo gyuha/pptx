@@ -120,14 +120,29 @@ const extractLabeledValue = (lines: ReadonlyArray<string>, label: 'budget' | 'ti
 };
 
 const extractTitle = (lines: ReadonlyArray<string>): string | undefined => {
-  const headingTitle = lines
+  // First, look for H1 headings (# Title) - highest priority
+  const h1Pattern = /^#\s+(.+)$/;
+  const h1Title = lines
+    .map((line) => {
+      const match = line.match(h1Pattern);
+      return match ? normalizeText(match[1]) : undefined;
+    })
+    .find((heading) => Boolean(heading && heading.length > 0));
+
+  if (h1Title) {
+    return h1Title;
+  }
+
+  // Fall back to any heading (H2-H6) if no H1 found
+  const anyHeadingTitle = lines
     .map((line) => getHeadingText(line))
     .find((heading) => Boolean(heading && heading.length > 0));
 
-  if (headingTitle) {
-    return headingTitle;
+  if (anyHeadingTitle) {
+    return anyHeadingTitle;
   }
 
+  // Finally, fall back to first non-empty text line
   const firstTextLine = lines.map((line) => normalizeText(line)).find((line) => line.length > 0);
   return firstTextLine;
 };
